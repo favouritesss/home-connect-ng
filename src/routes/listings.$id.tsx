@@ -75,7 +75,7 @@ function ListingDetail() {
             />
           </div>
           <div className="grid grid-cols-3 gap-3 md:grid-cols-1">
-            {listing.gallery.map((src, i) => (
+            {listing.gallery.map((src: string, i: number) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}

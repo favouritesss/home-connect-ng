@@ -46,7 +46,7 @@ function ListingsPage() {
   const navigate = Route.useNavigate();
 
   const update = (patch: Partial<Search>) =>
-    navigate({ search: (prev) => ({ ...prev, ...patch }) });
+    navigate({ search: (prev: Search) => ({ ...prev, ...patch }) });
 
   const filtered = useMemo(() => {
     return LISTINGS.filter((l) => {
