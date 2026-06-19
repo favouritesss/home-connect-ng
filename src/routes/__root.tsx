@@ -77,14 +77,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Landech — Rent in Lagos, simple and transparent" },
+      { name: "description", content: "Browse verified apartments and shortlets in Lagos. No hidden fees, no middlemen drama — just trusted landlords and agents on Landech." },
+      { property: "og:title", content: "Landech — Rent in Lagos, simple and transparent" },
+      { property: "og:description", content: "Verified rentals and shortlets across Lagos. Trusted landlords and agents, no hidden fees." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
