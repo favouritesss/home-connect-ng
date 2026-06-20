@@ -9,16 +9,45 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SafetyRouteImport } from './routes/safety'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ListingsRouteImport } from './routes/listings'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as ForLandlordsRouteImport } from './routes/for-landlords'
+import { Route as ForAgentsRouteImport } from './routes/for-agents'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ListingsIdRouteImport } from './routes/listings.$id'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyRoute = SafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -36,6 +65,31 @@ const HowItWorksRoute = HowItWorksRouteImport.update({
   path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ForLandlordsRoute = ForLandlordsRouteImport.update({
+  id: '/for-landlords',
+  path: '/for-landlords',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForAgentsRoute = ForAgentsRouteImport.update({
+  id: '/for-agents',
+  path: '/for-agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,71 +103,162 @@ const ListingsIdRoute = ListingsIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/for-agents': typeof ForAgentsRoute
+  '/for-landlords': typeof ForLandlordsRoute
   '/how-it-works': typeof HowItWorksRoute
   '/listings': typeof ListingsRouteWithChildren
   '/login': typeof LoginRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/safety': typeof SafetyRoute
   '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
   '/listings/$id': typeof ListingsIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/for-agents': typeof ForAgentsRoute
+  '/for-landlords': typeof ForLandlordsRoute
   '/how-it-works': typeof HowItWorksRoute
   '/listings': typeof ListingsRouteWithChildren
   '/login': typeof LoginRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/safety': typeof SafetyRoute
   '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
   '/listings/$id': typeof ListingsIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/for-agents': typeof ForAgentsRoute
+  '/for-landlords': typeof ForLandlordsRoute
   '/how-it-works': typeof HowItWorksRoute
   '/listings': typeof ListingsRouteWithChildren
   '/login': typeof LoginRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/safety': typeof SafetyRoute
   '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
   '/listings/$id': typeof ListingsIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/for-agents'
+    | '/for-landlords'
     | '/how-it-works'
     | '/listings'
     | '/login'
+    | '/pricing'
+    | '/privacy'
+    | '/safety'
     | '/signup'
+    | '/terms'
     | '/listings/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/for-agents'
+    | '/for-landlords'
     | '/how-it-works'
     | '/listings'
     | '/login'
+    | '/pricing'
+    | '/privacy'
+    | '/safety'
     | '/signup'
+    | '/terms'
     | '/listings/$id'
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/for-agents'
+    | '/for-landlords'
     | '/how-it-works'
     | '/listings'
     | '/login'
+    | '/pricing'
+    | '/privacy'
+    | '/safety'
     | '/signup'
+    | '/terms'
     | '/listings/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  ForAgentsRoute: typeof ForAgentsRoute
+  ForLandlordsRoute: typeof ForLandlordsRoute
   HowItWorksRoute: typeof HowItWorksRoute
   ListingsRoute: typeof ListingsRouteWithChildren
   LoginRoute: typeof LoginRoute
+  PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SafetyRoute: typeof SafetyRoute
   SignupRoute: typeof SignupRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/signup': {
       id: '/signup'
       path: '/signup'
       fullPath: '/signup'
       preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety': {
+      id: '/safety'
+      path: '/safety'
+      fullPath: '/safety'
+      preLoaderRoute: typeof SafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -135,6 +280,41 @@ declare module '@tanstack/react-router' {
       path: '/how-it-works'
       fullPath: '/how-it-works'
       preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-landlords': {
+      id: '/for-landlords'
+      path: '/for-landlords'
+      fullPath: '/for-landlords'
+      preLoaderRoute: typeof ForLandlordsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-agents': {
+      id: '/for-agents'
+      path: '/for-agents'
+      fullPath: '/for-agents'
+      preLoaderRoute: typeof ForAgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -168,10 +348,19 @@ const ListingsRouteWithChildren = ListingsRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  ForAgentsRoute: ForAgentsRoute,
+  ForLandlordsRoute: ForLandlordsRoute,
   HowItWorksRoute: HowItWorksRoute,
   ListingsRoute: ListingsRouteWithChildren,
   LoginRoute: LoginRoute,
+  PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
+  SafetyRoute: SafetyRoute,
   SignupRoute: SignupRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
