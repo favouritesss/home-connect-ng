@@ -49,7 +49,7 @@ export function ListingCard({ listing }: { listing: Listing }) {
         </h3>
         <p className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
           <MapPin className="h-3.5 w-3.5" />
-          {listing.area}
+          {listing.area}, {listing.state}
         </p>
 
         <div className="mt-3 flex items-center gap-4 border-t border-border/60 pt-3 text-xs text-muted-foreground">
