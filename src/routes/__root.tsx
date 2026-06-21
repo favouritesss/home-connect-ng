@@ -80,9 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Landech, Rent in Lagos, simple and transparent" },
       { name: "description", content: "Browse verified apartments and shortlets in Lagos. No hidden fees, no middlemen drama, just trusted landlords and agents on Landech." },
       { property: "og:title", content: "Landech, Rent in Lagos, simple and transparent" },
-      { property: "og:description", content: "Verified rentals and shortlets across Lagos. Trusted landlords and agents, no hidden fees." },
+      { property: "og:description", content: "Browse verified apartments and shortlets in Lagos. No hidden fees, no middlemen drama, just trusted landlords and agents on Landech." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Landech, Rent in Lagos, simple and transparent" },
+      { name: "twitter:description", content: "Browse verified apartments and shortlets in Lagos. No hidden fees, no middlemen drama, just trusted landlords and agents on Landech." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b1b4f2af-aa7c-4fd5-a898-33fb1b852a51/id-preview-1e64bcb3--b18c2674-9bae-45d5-a5db-ae25705e8b28.lovable.app-1782031710319.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b1b4f2af-aa7c-4fd5-a898-33fb1b852a51/id-preview-1e64bcb3--b18c2674-9bae-45d5-a5db-ae25705e8b28.lovable.app-1782031710319.png" },
     ],
     links: [
       {
