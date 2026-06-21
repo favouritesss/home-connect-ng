@@ -6,8 +6,8 @@ import { Search, MessageSquare, KeyRound, ShieldCheck } from "lucide-react";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How Landech works — Trusted renting in Lagos" },
-      { name: "description", content: "Browse, enquire, and rent — with Landech as the trusted middleman. Here's exactly how it works." },
+      { title: "How Landech works, Trusted renting in Lagos" },
+      { name: "description", content: "Browse, enquire, and rent, with Landech as the trusted middleman. Here's exactly how it works." },
     ],
   }),
   component: HowItWorks,
@@ -66,7 +66,7 @@ function HowItWorks() {
             <HostCard
               tag="Agent"
               price="From ₦0/mo"
-              points={["Basic plan free (3 listings)", "Verified plan ₦5,000/mo — unlimited listings", "₦10,000 closure fee per closed deal"]}
+              points={["Basic plan free (3 listings)", "Verified plan ₦5,000/mo, unlimited listings", "₦10,000 closure fee per closed deal"]}
             />
           </div>
         </div>

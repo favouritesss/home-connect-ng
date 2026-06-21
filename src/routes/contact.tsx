@@ -7,7 +7,7 @@ import { Mail, MapPin, MessageSquare, Phone, Send } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Landech — We're here to help" },
+      { title: "Contact Landech, We're here to help" },
       { name: "description", content: "Reach the Landech team. We respond to most messages within one business day." },
     ],
   }),
@@ -25,7 +25,7 @@ function ContactPage() {
           <h1 className="mt-5 font-display text-4xl text-foreground md:text-5xl">Talk to the Landech team.</h1>
           <p className="mt-4 text-muted-foreground">
             Whether you have a question about a listing, a complaint about a host, or
-            you're a press/partnership enquiry — we'd love to hear from you.
+            you're a press/partnership enquiry, we'd love to hear from you.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ function ContactPage() {
             {sent ? (
               <div className="rounded-xl bg-primary-soft p-6 text-primary">
                 <h3 className="font-display text-xl">Message received</h3>
-                <p className="mt-2 text-sm">Thanks — a member of our team will reply within 1 business day.</p>
+                <p className="mt-2 text-sm">Thanks, a member of our team will reply within 1 business day.</p>
               </div>
             ) : (
               <form className="grid gap-4" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>

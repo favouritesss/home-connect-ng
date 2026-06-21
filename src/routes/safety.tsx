@@ -5,8 +5,8 @@ import { AlertTriangle, Eye, Lock, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/safety")({
   head: () => ({ meta: [
-    { title: "Safety & trust — Landech" },
-    { name: "description", content: "How Landech keeps you safe — from NIN verification to escrowed shortlet payments." },
+    { title: "Safety & trust, Landech" },
+    { name: "description", content: "How Landech keeps you safe, from NIN verification to escrowed shortlet payments." },
   ]}),
   component: Safety,
 });

@@ -5,7 +5,7 @@ import { Check, Star, TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/for-agents")({
   head: () => ({ meta: [
-    { title: "Grow your agency on Landech — for agents" },
+    { title: "Grow your agency on Landech, for agents" },
     { name: "description", content: "Start free with 3 listings or go Verified at ₦5,000/month for unlimited listings, badge, and priority placement." },
   ]}),
   component: ForAgents,
@@ -21,7 +21,7 @@ function ForAgents() {
           <h1 className="mt-5 font-display text-4xl text-foreground md:text-5xl">Build a real agency on a platform renters trust.</h1>
           <p className="mt-4 text-muted-foreground md:text-lg">
             Stop chasing dead-end WhatsApp leads. Landech sends you renters who already
-            saw your declared fees, photos, and verification badge — and chose to enquire.
+            saw your declared fees, photos, and verification badge, and chose to enquire.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ function ForAgents() {
             <h2 className="mt-2 font-display text-2xl text-foreground">₦10,000 closure fee per closed yearly rent</h2>
             <p className="mt-3 text-muted-foreground">
               Yearly rent is paid offline directly to you. Once the deal closes, mark it as
-              closed in your dashboard — we auto-invoice ₦10,000 via Paystack. No posting fees.
+              closed in your dashboard, we auto-invoice ₦10,000 via Paystack. No posting fees.
               No surprises.
             </p>
           </div>
@@ -60,7 +60,7 @@ function ForAgents() {
         </div>
 
         <div className="mt-14 rounded-3xl border border-destructive/20 bg-destructive/5 p-6 md:p-8">
-          <h3 className="font-display text-xl text-foreground">One NIN, one account — forever.</h3>
+          <h3 className="font-display text-xl text-foreground">One NIN, one account, forever.</h3>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
             To keep the platform safe and fair, every agent verifies their NIN through NIMC.
             Unpaid closure fees blacklist the NIN, preventing new accounts. This protects honest

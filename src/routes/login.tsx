@@ -3,7 +3,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/login")({
-  head: () => ({ meta: [{ title: "Sign in — Landech" }] }),
+  head: () => ({ meta: [{ title: "Sign in, Landech" }] }),
   component: LoginPage,
 });
 
@@ -29,7 +29,7 @@ function LoginPage() {
             <Link to="/signup" className="font-semibold text-primary hover:underline">Create an account</Link>
           </p>
           <p className="mt-2 text-center text-[11px] text-muted-foreground">
-            Authentication is not connected yet — this is a preview of the sign-in screen.
+            Authentication is not connected yet, this is a preview of the sign-in screen.
           </p>
         </div>
       </section>

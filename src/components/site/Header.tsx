@@ -8,6 +8,7 @@ const NAV = [
   { to: "/how-it-works", label: "How it works" },
   { to: "/for-landlords", label: "For landlords" },
   { to: "/for-agents", label: "For agents" },
+  { to: "/dashboard", label: "Dashboards" },
 ];
 
 export function Header() {
