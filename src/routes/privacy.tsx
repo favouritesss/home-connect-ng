@@ -4,7 +4,7 @@ import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({ meta: [
-    { title: "Privacy policy — Landech" },
+    { title: "Privacy policy, Landech" },
     { name: "description", content: "How Landech collects, uses, and protects your data." },
   ]}),
   component: Privacy,

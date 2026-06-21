@@ -14,7 +14,7 @@ export function Footer() {
           </Link>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
             Renting in Nigeria, made simple and transparent. Verified listings,
-            no hidden fees, and a trusted middleman on every deal — nationwide.
+            no hidden fees, and a trusted middleman on every deal, nationwide.
           </p>
           <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
             <li className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-primary" /> Serving all 36 states + FCT</li>

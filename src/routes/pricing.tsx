@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({ meta: [
-    { title: "Fees & pricing — Landech" },
+    { title: "Fees & pricing, Landech" },
     { name: "description", content: "Transparent pricing for tenants, landlords, and agents. No hidden fees, ever." },
   ]}),
   component: Pricing,
@@ -29,7 +29,7 @@ function Pricing() {
             title="Tenants"
             price="₦0"
             tag="Always free"
-            description="Browse, message, and rent. Landech is free for renters — forever."
+            description="Browse, message, and rent. Landech is free for renters, forever."
             features={["Unlimited search", "Verified listings only", "Safe middleman messaging", "Shortlet escrow protection"]}
             cta="Browse rentals"
             to="/listings"

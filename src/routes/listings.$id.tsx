@@ -24,7 +24,7 @@ export const Route = createFileRoute("/listings/$id")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.listing.title} — Landech` },
+          { title: `${loaderData.listing.title}, Landech` },
           { name: "description", content: loaderData.listing.description.slice(0, 155) },
           { property: "og:title", content: loaderData.listing.title },
           { property: "og:description", content: loaderData.listing.description.slice(0, 155) },
@@ -164,7 +164,7 @@ function ListingDetail() {
                 <Info className="mt-0.5 h-4 w-4 shrink-0" />
                 <p>
                   Your enquiry goes to Landech first. We pass it to the {listing.listedBy} and
-                  bring their reply back to you — all inside the platform.
+                  bring their reply back to you, all inside the platform.
                 </p>
               </div>
             </div>
@@ -224,7 +224,7 @@ function EnquireDialog({ listingTitle, onClose }: { listingTitle: string; onClos
 
         {sent ? (
           <div className="rounded-xl bg-primary-soft p-4 text-sm text-primary">
-            Thanks — Landech has received your enquiry and will pass it to the host.
+            Thanks, Landech has received your enquiry and will pass it to the host.
             You'll get a reply in your inbox once they respond.
           </div>
         ) : (

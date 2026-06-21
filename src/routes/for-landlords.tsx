@@ -5,7 +5,7 @@ import { BadgeCheck, Camera, FileText, ShieldCheck, Upload, UserCheck } from "lu
 
 export const Route = createFileRoute("/for-landlords")({
   head: () => ({ meta: [
-    { title: "List your property free — for landlords | Landech" },
+    { title: "List your property free, for landlords | Landech" },
     { name: "description", content: "Post your property directly, with no agency fees. Get a Verified Landlord badge and reach serious renters nationwide." },
   ]}),
   component: ForLandlords,
@@ -19,7 +19,7 @@ function ForLandlords() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">For landlords</span>
-            <h1 className="mt-5 font-display text-4xl text-foreground md:text-5xl">List your property — free, forever.</h1>
+            <h1 className="mt-5 font-display text-4xl text-foreground md:text-5xl">List your property, free, forever.</h1>
             <p className="mt-4 text-muted-foreground md:text-lg">
               Skip the agent middlemen. Post directly, attach the "Direct from Landlord"
               badge, and talk to serious renters through our protected messaging system.
@@ -41,7 +41,7 @@ function ForLandlords() {
               ].map(([h, b]) => (
                 <li key={h} className="flex gap-3">
                   <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span><span className="font-semibold text-foreground">{h}</span> — {b}</span>
+                  <span><span className="font-semibold text-foreground">{h}</span>, {b}</span>
                 </li>
               ))}
             </ul>
@@ -55,7 +55,7 @@ function ForLandlords() {
           </p>
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {[
-              { i: <UserCheck />, t: "NIN", b: "National Identification Number — verified via NIMC." },
+              { i: <UserCheck />, t: "NIN", b: "National Identification Number, verified via NIMC." },
               { i: <FileText />, t: "Property documents", b: "C of O or signed purchase receipt." },
               { i: <Upload />, t: "Utility bill", b: "Recent bill for the property address." },
               { i: <Camera />, t: "Selfie with NIN", b: "Confirms you're the document holder." },

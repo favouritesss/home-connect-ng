@@ -12,9 +12,9 @@ import heroImg from "@/assets/hero-lagos.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Landech — Rent verified homes anywhere in Nigeria" },
+      { title: "Landech, Rent verified homes anywhere in Nigeria" },
       { name: "description", content: "Find verified apartments, self-cons and shortlets across all 36 states + FCT. No hidden fees. Landech handles every enquiry safely." },
-      { property: "og:title", content: "Landech — Rent verified homes anywhere in Nigeria" },
+      { property: "og:title", content: "Landech, Rent verified homes anywhere in Nigeria" },
       { property: "og:description", content: "Verified landlords and agents. Honest fees. Real-time location search across all 774 LGAs." },
     ],
   }),
@@ -64,7 +64,7 @@ function Home() {
               <Sparkles className="h-3 w-3" /> Live in {totalStates}+ states · all 774 LGAs searchable
             </span>
             <h1 className="mt-5 font-display text-4xl leading-[1.05] text-background sm:text-5xl md:text-6xl">
-              Find your next home anywhere in Nigeria — without the runaround.
+              Find your next home anywhere in Nigeria, without the runaround.
             </h1>
             <p className="mt-5 max-w-xl text-base text-background/85 md:text-lg">
               Verified landlords and agents from Lagos to Maiduguri, Kano to Calabar.
@@ -125,7 +125,7 @@ function Home() {
         <div className="container-page grid gap-8 py-12 md:grid-cols-3">
           <TrustItem icon={<ShieldCheck className="h-5 w-5" />} title="Verified landlords & agents" body="Every host submits NIN, ID and property documents before they can list." />
           <TrustItem icon={<MessageSquare className="h-5 w-5" />} title="Landech as middleman" body="Enquiries route through us. No one disappears, no one drags you offline." />
-          <TrustItem icon={<Wallet className="h-5 w-5" />} title="Honest fees, upfront" body="Agency fees and caution deposits are shown on every listing — before you reach out." />
+          <TrustItem icon={<Wallet className="h-5 w-5" />} title="Honest fees, upfront" body="Agency fees and caution deposits are shown on every listing, before you reach out." />
         </div>
       </section>
 
@@ -134,7 +134,7 @@ function Home() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-3xl text-foreground md:text-4xl">Search by state</h2>
-            <p className="mt-2 text-muted-foreground">From the South-South to the North-West — all 36 states + FCT.</p>
+            <p className="mt-2 text-muted-foreground">From the South-South to the North-West, all 36 states + FCT.</p>
           </div>
           <Link to="/listings" className="hidden items-center gap-1 text-sm font-semibold text-primary hover:underline sm:inline-flex">
             See all listings <ArrowRight className="h-4 w-4" />
@@ -183,7 +183,7 @@ function Home() {
             </span>
             <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">A renting experience built around trust.</h2>
             <p className="mt-4 text-muted-foreground">
-              Nigerian renting has been broken for too long — inflated agent fees, ghosted enquiries,
+              Nigerian renting has been broken for too long, inflated agent fees, ghosted enquiries,
               fake listings. Landech is rebuilding it from scratch around verified people, real prices,
               and transparent communication.
             </p>

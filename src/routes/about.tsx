@@ -6,7 +6,7 @@ import { Heart, ShieldCheck, Globe2, Users } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Landech — Renting in Nigeria, made human" },
+      { title: "About Landech, Renting in Nigeria, made human" },
       { name: "description", content: "We're rebuilding Nigerian renting around trust, transparency, and verified people. Learn the mission behind Landech." },
       { property: "og:title", content: "About Landech" },
       { property: "og:description", content: "We're rebuilding Nigerian renting around trust, transparency, and verified people." },
@@ -26,8 +26,8 @@ function AboutPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-muted-foreground md:text-lg">
           Landech is a Nigerian rental platform built for students, young professionals,
-          and families. We exist to make finding a home — across all 36 states and the
-          FCT — simple, transparent, and free of unnecessary fees and confusion.
+          and families. We exist to make finding a home, across all 36 states and the
+          FCT, simple, transparent, and free of unnecessary fees and confusion.
         </p>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -50,14 +50,14 @@ function AboutPage() {
             <h2 className="font-display text-3xl text-foreground">Our mission</h2>
             <p className="mt-3 text-muted-foreground">
               To make renting in Nigeria simple, transparent, and free of unnecessary fees
-              and confusion. Landech is not just a listing site — it is a trust-first
+              and confusion. Landech is not just a listing site, it is a trust-first
               platform that puts tenants and honest landlords and agents first.
             </p>
           </div>
           <div>
             <h2 className="font-display text-3xl text-foreground">Our vision</h2>
             <p className="mt-3 text-muted-foreground">
-              Become the default place Nigerians look when they want a home — and then
+              Become the default place Nigerians look when they want a home, and then
               expand across Africa, carrying with us the same standards of safety,
               transparency, and respect for the people who use the platform.
             </p>

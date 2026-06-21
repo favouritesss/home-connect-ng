@@ -34,7 +34,7 @@ export const Route = createFileRoute("/listings")({
   }),
   head: () => ({
     meta: [
-      { title: "Browse verified rentals across Nigeria — Landech" },
+      { title: "Browse verified rentals across Nigeria, Landech" },
       { name: "description", content: "Search apartments, self-contained, and shortlets across all 36 states + FCT." },
     ],
   }),
@@ -112,7 +112,7 @@ function ListingsPage() {
               setLiveQuery(loc.label);
               update({ state: loc.state, area: loc.lga, q: undefined });
             }}
-            placeholder="Type any town, city, or LGA — results update as you type"
+            placeholder="Type any town, city, or LGA, results update as you type"
           />
         </div>
 

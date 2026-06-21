@@ -7,7 +7,7 @@ import { AuthStyles } from "./login";
 type Role = "tenant" | "landlord" | "agent";
 
 export const Route = createFileRoute("/signup")({
-  head: () => ({ meta: [{ title: "Create your account — Landech" }] }),
+  head: () => ({ meta: [{ title: "Create your account, Landech" }] }),
   component: SignupPage,
 });
 
@@ -72,7 +72,7 @@ function SignupPage() {
             <Link to="/login" className="font-semibold text-primary hover:underline">Sign in</Link>
           </p>
           <p className="mt-2 text-center text-[11px] text-muted-foreground">
-            Sign-up is a preview — backend wiring (NIN, email verification, JWT) comes next.
+            Sign-up is a preview, backend wiring (NIN, email verification, JWT) comes next.
           </p>
         </div>
       </section>

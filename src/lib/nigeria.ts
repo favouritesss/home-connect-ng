@@ -1,4 +1,4 @@
-// Nigeria — all 36 states + FCT, with their LGAs.
+// Nigeria, all 36 states + FCT, with their LGAs.
 // Source: Nigerian National Bureau of Statistics / INEC lists.
 
 export interface StateData {

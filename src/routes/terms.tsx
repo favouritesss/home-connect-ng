@@ -4,7 +4,7 @@ import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({ meta: [
-    { title: "Terms of use — Landech" },
+    { title: "Terms of use, Landech" },
     { name: "description", content: "The terms that govern your use of the Landech platform." },
   ]}),
   component: Terms,
