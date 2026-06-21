@@ -26,6 +26,10 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard.index'
 import { Route as ListingsIdRouteImport } from './routes/listings.$id'
+import { Route as DashboardTenantRouteImport } from './routes/dashboard.tenant'
+import { Route as DashboardLandlordRouteImport } from './routes/dashboard.landlord'
+import { Route as DashboardAgentRouteImport } from './routes/dashboard.agent'
+import { Route as DashboardAdminRouteImport } from './routes/dashboard.admin'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -112,6 +116,26 @@ const ListingsIdRoute = ListingsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => ListingsRoute,
 } as any)
+const DashboardTenantRoute = DashboardTenantRouteImport.update({
+  id: '/tenant',
+  path: '/tenant',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardLandlordRoute = DashboardLandlordRouteImport.update({
+  id: '/landlord',
+  path: '/landlord',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAgentRoute = DashboardAgentRouteImport.update({
+  id: '/agent',
+  path: '/agent',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAdminRoute = DashboardAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => DashboardRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -129,6 +153,10 @@ export interface FileRoutesByFullPath {
   '/safety': typeof SafetyRoute
   '/signup': typeof SignupRoute
   '/terms': typeof TermsRoute
+  '/dashboard/admin': typeof DashboardAdminRoute
+  '/dashboard/agent': typeof DashboardAgentRoute
+  '/dashboard/landlord': typeof DashboardLandlordRoute
+  '/dashboard/tenant': typeof DashboardTenantRoute
   '/listings/$id': typeof ListingsIdRoute
   '/dashboard/': typeof DashboardIndexRoute
 }
@@ -147,6 +175,10 @@ export interface FileRoutesByTo {
   '/safety': typeof SafetyRoute
   '/signup': typeof SignupRoute
   '/terms': typeof TermsRoute
+  '/dashboard/admin': typeof DashboardAdminRoute
+  '/dashboard/agent': typeof DashboardAgentRoute
+  '/dashboard/landlord': typeof DashboardLandlordRoute
+  '/dashboard/tenant': typeof DashboardTenantRoute
   '/listings/$id': typeof ListingsIdRoute
   '/dashboard': typeof DashboardIndexRoute
 }
@@ -167,6 +199,10 @@ export interface FileRoutesById {
   '/safety': typeof SafetyRoute
   '/signup': typeof SignupRoute
   '/terms': typeof TermsRoute
+  '/dashboard/admin': typeof DashboardAdminRoute
+  '/dashboard/agent': typeof DashboardAgentRoute
+  '/dashboard/landlord': typeof DashboardLandlordRoute
+  '/dashboard/tenant': typeof DashboardTenantRoute
   '/listings/$id': typeof ListingsIdRoute
   '/dashboard/': typeof DashboardIndexRoute
 }
@@ -188,6 +224,10 @@ export interface FileRouteTypes {
     | '/safety'
     | '/signup'
     | '/terms'
+    | '/dashboard/admin'
+    | '/dashboard/agent'
+    | '/dashboard/landlord'
+    | '/dashboard/tenant'
     | '/listings/$id'
     | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
@@ -206,6 +246,10 @@ export interface FileRouteTypes {
     | '/safety'
     | '/signup'
     | '/terms'
+    | '/dashboard/admin'
+    | '/dashboard/agent'
+    | '/dashboard/landlord'
+    | '/dashboard/tenant'
     | '/listings/$id'
     | '/dashboard'
   id:
@@ -225,6 +269,10 @@ export interface FileRouteTypes {
     | '/safety'
     | '/signup'
     | '/terms'
+    | '/dashboard/admin'
+    | '/dashboard/agent'
+    | '/dashboard/landlord'
+    | '/dashboard/tenant'
     | '/listings/$id'
     | '/dashboard/'
   fileRoutesById: FileRoutesById
@@ -368,14 +416,50 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ListingsIdRouteImport
       parentRoute: typeof ListingsRoute
     }
+    '/dashboard/tenant': {
+      id: '/dashboard/tenant'
+      path: '/tenant'
+      fullPath: '/dashboard/tenant'
+      preLoaderRoute: typeof DashboardTenantRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/landlord': {
+      id: '/dashboard/landlord'
+      path: '/landlord'
+      fullPath: '/dashboard/landlord'
+      preLoaderRoute: typeof DashboardLandlordRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/agent': {
+      id: '/dashboard/agent'
+      path: '/agent'
+      fullPath: '/dashboard/agent'
+      preLoaderRoute: typeof DashboardAgentRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/admin': {
+      id: '/dashboard/admin'
+      path: '/admin'
+      fullPath: '/dashboard/admin'
+      preLoaderRoute: typeof DashboardAdminRouteImport
+      parentRoute: typeof DashboardRoute
+    }
   }
 }
 
 interface DashboardRouteChildren {
+  DashboardAdminRoute: typeof DashboardAdminRoute
+  DashboardAgentRoute: typeof DashboardAgentRoute
+  DashboardLandlordRoute: typeof DashboardLandlordRoute
+  DashboardTenantRoute: typeof DashboardTenantRoute
   DashboardIndexRoute: typeof DashboardIndexRoute
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardAdminRoute: DashboardAdminRoute,
+  DashboardAgentRoute: DashboardAgentRoute,
+  DashboardLandlordRoute: DashboardLandlordRoute,
+  DashboardTenantRoute: DashboardTenantRoute,
   DashboardIndexRoute: DashboardIndexRoute,
 }
 
