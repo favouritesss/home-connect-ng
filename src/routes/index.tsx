@@ -75,7 +75,7 @@ function Home() {
         <div className="container-page relative py-20 md:py-28">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-primary">
-              <Sparkles className="h-3 w-3" /> Live in all {totalStates} states, {totalLgas} LGAs searchable
+              <Sparkles className="h-3 w-3" /> Verified homes, honest fees, zero ghosting
             </span>
             <h1 className="mt-5 font-display text-4xl leading-[1.05] text-background sm:text-5xl md:text-6xl">
               A simpler way to rent. Anywhere you call home.
