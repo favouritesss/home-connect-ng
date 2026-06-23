@@ -68,14 +68,14 @@ function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Modern Nigerian apartment building at golden hour" width={1920} height={1080} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-foreground/65 via-foreground/50 to-foreground/80" />
+          <img src={heroImg} alt="Modern apartment building at golden hour" width={1920} height={1080} className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/65 to-primary/30" />
         </div>
 
         <div className="container-page relative py-20 md:py-28">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-primary">
-              <Sparkles className="h-3 w-3" /> Live in all {totalStates} states, {totalLgas} LGAs searchable
+              <Sparkles className="h-3 w-3" /> Verified homes, honest fees, zero ghosting
             </span>
             <h1 className="mt-5 font-display text-4xl leading-[1.05] text-background sm:text-5xl md:text-6xl">
               A simpler way to rent. Anywhere you call home.
