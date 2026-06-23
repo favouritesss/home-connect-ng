@@ -68,8 +68,8 @@ function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Modern Nigerian apartment building at golden hour" width={1920} height={1080} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-foreground/65 via-foreground/50 to-foreground/80" />
+          <img src={heroImg} alt="Modern apartment building at golden hour" width={1920} height={1080} className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/65 to-primary/30" />
         </div>
 
         <div className="container-page relative py-20 md:py-28">
