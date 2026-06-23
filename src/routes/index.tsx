@@ -78,11 +78,11 @@ function Home() {
               <Sparkles className="h-3 w-3" /> Live in all {totalStates} states, {totalLgas} LGAs searchable
             </span>
             <h1 className="mt-5 font-display text-4xl leading-[1.05] text-background sm:text-5xl md:text-6xl">
-              Find your next home anywhere in Nigeria, without the runaround.
+              A simpler way to rent. Anywhere you call home.
             </h1>
             <p className="mt-5 max-w-xl text-base text-background/85 md:text-lg">
-              Verified landlords and agents from Lagos to Maiduguri, Kano to Calabar.
-              Honest fees, no ghosting. Every enquiry passes through Landech.
+              Verified landlords and agents, honest fees, no ghosting.
+              Every enquiry passes through Landech, safely.
             </p>
           </div>
 

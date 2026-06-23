@@ -1,15 +1,14 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "@fontsource-variable/inter";
 @import "@fontsource-variable/plus-jakarta-sans";
-@import "@fontsource/dm-serif-display/400.css";
 
 @custom-variant dark (&:is(.dark *));
 
 /*
  * Landech Design System
- * Trust-first Nigerian property platform.
- * Deep emerald primary, warm cream surface, gold accent.
+ * International proptech identity, deep navy + warm cream + sand accent.
  * All colors are oklch tokens; never hardcode in components.
  */
 
@@ -47,11 +46,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-sans: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "DM Serif Display", ui-serif, Georgia, serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-soft: 0 1px 2px oklch(0.2 0.05 160 / 0.04), 0 8px 24px oklch(0.2 0.05 160 / 0.06);
-  --shadow-lift: 0 2px 4px oklch(0.2 0.05 160 / 0.06), 0 16px 40px oklch(0.2 0.05 160 / 0.10);
+  --shadow-soft: 0 1px 2px oklch(0.20 0.08 264 / 0.06), 0 8px 24px oklch(0.20 0.08 264 / 0.08);
+  --shadow-lift: 0 2px 4px oklch(0.20 0.08 264 / 0.08), 0 16px 40px oklch(0.20 0.08 264 / 0.12);
 }
 
 :root {
@@ -59,60 +58,60 @@
 
   /* warm cream base */
   --background: oklch(0.985 0.012 90);
-  --foreground: oklch(0.22 0.03 160);
+  --foreground: oklch(0.20 0.04 264);
 
   --surface: oklch(1 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 160);
+  --card-foreground: oklch(0.20 0.04 264);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 160);
+  --popover-foreground: oklch(0.20 0.04 264);
 
-  /* deep emerald */
-  --primary: oklch(0.38 0.10 160);
+  /* deep navy #003087 */
+  --primary: oklch(0.32 0.17 264);
   --primary-foreground: oklch(0.985 0.012 90);
-  --primary-soft: oklch(0.94 0.04 160);
+  --primary-soft: oklch(0.94 0.04 264);
 
-  --secondary: oklch(0.95 0.02 150);
-  --secondary-foreground: oklch(0.28 0.06 160);
+  --secondary: oklch(0.95 0.02 260);
+  --secondary-foreground: oklch(0.28 0.10 264);
 
-  --muted: oklch(0.96 0.01 120);
-  --muted-foreground: oklch(0.50 0.02 160);
+  --muted: oklch(0.96 0.01 90);
+  --muted-foreground: oklch(0.50 0.03 260);
 
-  --accent: oklch(0.94 0.04 160);
-  --accent-foreground: oklch(0.32 0.08 160);
+  --accent: oklch(0.94 0.04 264);
+  --accent-foreground: oklch(0.32 0.17 264);
 
-  /* warm gold */
-  --gold: oklch(0.78 0.13 75);
+  /* warm sand accent #C8A36A */
+  --gold: oklch(0.74 0.10 80);
   --gold-foreground: oklch(0.25 0.05 70);
 
-  --success: oklch(0.65 0.16 150);
+  --success: oklch(0.62 0.15 155);
   --success-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.58 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(0.90 0.015 120);
-  --input: oklch(0.92 0.015 120);
-  --ring: oklch(0.45 0.10 160);
+  --border: oklch(0.90 0.015 260);
+  --input: oklch(0.92 0.015 260);
+  --ring: oklch(0.40 0.15 264);
 }
 
 .dark {
-  --background: oklch(0.18 0.02 160);
+  --background: oklch(0.17 0.04 264);
   --foreground: oklch(0.96 0.01 90);
-  --surface: oklch(0.22 0.03 160);
-  --card: oklch(0.22 0.03 160);
+  --surface: oklch(0.22 0.05 264);
+  --card: oklch(0.22 0.05 264);
   --card-foreground: oklch(0.96 0.01 90);
-  --popover: oklch(0.22 0.03 160);
+  --popover: oklch(0.22 0.05 264);
   --popover-foreground: oklch(0.96 0.01 90);
-  --primary: oklch(0.78 0.13 160);
-  --primary-foreground: oklch(0.18 0.04 160);
-  --primary-soft: oklch(0.32 0.06 160);
-  --secondary: oklch(0.28 0.03 160);
+  --primary: oklch(0.70 0.15 264);
+  --primary-foreground: oklch(0.17 0.04 264);
+  --primary-soft: oklch(0.30 0.10 264);
+  --secondary: oklch(0.28 0.05 264);
   --secondary-foreground: oklch(0.96 0.01 90);
-  --muted: oklch(0.26 0.02 160);
-  --muted-foreground: oklch(0.72 0.02 120);
-  --accent: oklch(0.32 0.06 160);
+  --muted: oklch(0.26 0.04 264);
+  --muted-foreground: oklch(0.72 0.02 260);
+  --accent: oklch(0.32 0.08 264);
   --accent-foreground: oklch(0.96 0.01 90);
-  --gold: oklch(0.78 0.13 75);
+  --gold: oklch(0.78 0.13 80);
   --gold-foreground: oklch(0.18 0.04 70);
   --success: oklch(0.65 0.16 150);
   --success-foreground: oklch(0.99 0 0);
@@ -120,7 +119,7 @@
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.65 0.10 160);
+  --ring: oklch(0.65 0.12 264);
 }
 
 @layer base {
@@ -135,9 +134,10 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    font-weight: 700;
   }
 }
 
