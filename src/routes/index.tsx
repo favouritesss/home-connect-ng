@@ -65,17 +65,28 @@ function Home() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero — Editorial Luxe Canvas */}
-      <section className="bg-background">
-        <div className="container-page pt-16 pb-12 md:pt-24 md:pb-16">
+      {/* Hero — Editorial Luxe Canvas with faded house backdrop */}
+      <section className="relative overflow-hidden bg-background">
+        {/* Backdrop house illustration */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-0 bg-center bg-no-repeat opacity-[0.07] [background-size:90%_auto] md:opacity-[0.09] md:[background-size:70%_auto]"
+          style={{ backgroundImage: `url(${heroHouse})` }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-40 bg-gradient-to-b from-transparent to-background"
+        />
+
+        <div className="container-page relative pt-16 pb-12 md:pt-24 md:pb-16">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-primary md:text-7xl lg:text-[5.5rem]">
               Find home.
               <br />
-              <span className="text-gold">Everywhere.</span>
+              <span className="text-gold">Without the run-around.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/70 md:text-lg">
-              The most trusted source for verified rentals and neighbourhood insights across the country.
+              Rentals from verified hosts, with prices, fees and floor plans laid bare before you ever pick up the phone.
             </p>
           </div>
 
