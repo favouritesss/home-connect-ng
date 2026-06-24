@@ -300,10 +300,10 @@ function Home() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              { t: "₦0 to list", d: "Landlords post for free, forever." },
-              { t: "Capped fees", d: "Agency fees are bounded and disclosed up front." },
-              { t: "Refundable shortlets", d: "Paystack-secured payments. Full refund if a host cancels." },
-              { t: "Real identities", d: "NIMC NIN verification is non-negotiable for hosts." },
+              { t: "₦0 to list", d: "Hosts post and renew for free, no upgrade walls." },
+              { t: "Caps, not surprises", d: "Agency and legal fees are disclosed in naira, on the listing." },
+              { t: "Money-back shortlets", d: "Paystack-secured stays, refunded in full when a host bails." },
+              { t: "Real, ID-checked people", d: "Every host clears NIN and document checks before going live." },
             ].map((b) => (
               <div key={b.t} className="rounded-2xl border border-border bg-card p-5">
                 <div className="font-display text-xl text-primary">{b.t}</div>
