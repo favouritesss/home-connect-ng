@@ -318,8 +318,8 @@ function Home() {
       <section className="container-page py-16">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="font-display text-3xl text-foreground md:text-4xl">Stories from real renters</h2>
-            <p className="mt-2 text-muted-foreground">Early users from across the country sharing how Landech changed their search.</p>
+            <h2 className="font-display text-3xl text-foreground md:text-4xl">In their own words.</h2>
+            <p className="mt-2 text-muted-foreground">Renters, landlords and agents on what changed when they switched.</p>
           </div>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
