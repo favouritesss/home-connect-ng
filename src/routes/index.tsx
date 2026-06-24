@@ -348,22 +348,24 @@ function Home() {
       {/* For hosts split CTA */}
       <section className="container-page py-16">
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border border-border bg-card p-8 md:p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[oklch(0.97_0.02_85)] p-8 md:p-10">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
             <div className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
               <Building2 className="h-3 w-3" /> Landlords
             </div>
-            <h3 className="mt-4 font-display text-2xl text-foreground">List your property in minutes.</h3>
-            <p className="mt-2 text-muted-foreground">Direct from landlord listings get a verified badge once your documents are approved. Zero fees, ever.</p>
+            <h3 className="mt-4 font-display text-2xl text-foreground">Put your keys in the right hands.</h3>
+            <p className="mt-2 text-muted-foreground">Free to list, forever. Get the verified badge the moment your documents clear, and reach renters who are actually ready to move.</p>
             <Link to="/for-landlords" className="mt-6 inline-flex rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-              Become a landlord
+              List a property
             </Link>
           </div>
-          <div className="rounded-3xl border border-border bg-foreground p-8 text-background md:p-10">
-            <div className="inline-flex items-center gap-2 rounded-full bg-background/15 px-3 py-1 text-xs font-semibold text-background">
+          <div className="relative overflow-hidden rounded-3xl bg-primary p-8 text-primary-foreground md:p-10">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-3 py-1 text-xs font-semibold text-primary-foreground">
               <Users className="h-3 w-3" /> Agents
             </div>
-            <h3 className="mt-4 font-display text-2xl">Grow with a verified profile.</h3>
-            <p className="mt-2 text-background/80">Start on Basic for free. Upgrade to Verified for unlimited listings, priority placement and the trust badge serious renters look for.</p>
+            <h3 className="mt-4 font-display text-2xl">Build a name renters trust.</h3>
+            <p className="mt-2 text-primary-foreground/80">Start free on Basic. Step up to Verified for unlimited listings, priority placement and the badge serious renters look for first.</p>
             <Link to="/for-agents" className="mt-6 inline-flex rounded-xl bg-gold px-5 py-3 text-sm font-semibold text-gold-foreground hover:opacity-95">
               Join as an agent
             </Link>
@@ -373,17 +375,18 @@ function Home() {
 
       {/* Final CTA */}
       <section className="container-page pb-20">
-        <div className="overflow-hidden rounded-3xl bg-primary px-8 py-12 text-primary-foreground md:px-14 md:py-16">
+        <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[oklch(0.97_0.02_85)] px-8 py-12 md:px-14 md:py-16">
+          <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
           <div className="grid items-center gap-8 md:grid-cols-[1.4fr_1fr]">
             <div>
-              <h2 className="font-display text-3xl md:text-4xl">Ready to find a home you can trust?</h2>
-              <p className="mt-3 max-w-lg text-primary-foreground/85">
-                Tens of thousands of rentals across every Nigerian state. Honest fees, verified hosts, and a real middleman on every deal.
+              <h2 className="font-display text-3xl text-primary md:text-4xl">A home you can settle into — found honestly.</h2>
+              <p className="mt-3 max-w-lg text-foreground/70">
+                Browse verified rentals, message hosts without games, and lock in a place you've actually seen. No padded fees, no ghost agents.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
-              <Link to="/listings" className="rounded-xl bg-gold px-5 py-3 text-sm font-semibold text-gold-foreground shadow-soft hover:opacity-95">Browse rentals</Link>
-              <Link to="/signup" className="rounded-xl border border-primary-foreground/30 px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10">Create an account</Link>
+              <Link to="/listings" className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:bg-primary/90">Browse rentals</Link>
+              <Link to="/signup" className="rounded-xl border border-primary/20 bg-card px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-soft">Create an account</Link>
             </div>
           </div>
         </div>
