@@ -171,8 +171,8 @@ function Home() {
       <section className="container-page py-12">
         <div className="flex items-end justify-between gap-4 border-b-2 border-primary/5 pb-8">
           <div>
-            <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">New to Market</h2>
-            <p className="mt-2 text-base font-medium text-primary/60">Exclusive listings curated for refined lifestyles.</p>
+            <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">Fresh off the market</h2>
+            <p className="mt-2 text-base font-medium text-primary/60">Homes listed this week — checked, photographed and ready to tour.</p>
           </div>
           <Link to="/listings" className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
             See all <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
