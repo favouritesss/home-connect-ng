@@ -288,11 +288,10 @@ function Home() {
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
               <BadgeCheck className="h-3 w-3" /> Why Landech
             </span>
-            <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">A renting experience built around trust.</h2>
+            <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">Renting, rebuilt around the renter.</h2>
             <p className="mt-4 text-muted-foreground">
-              Nigerian renting has been broken for too long. Inflated agent fees, ghosted enquiries,
-              fake listings. Landech is rebuilding it from scratch around verified people, real prices,
-              and transparent communication.
+              Padded agency fees. Phantom listings. Phones that ring out the day before move-in. We've taken renting apart
+              and put it back together around real people, real prices, and one place where everything is written down.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/how-it-works" className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">How it works</Link>
