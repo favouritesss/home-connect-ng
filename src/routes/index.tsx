@@ -74,62 +74,63 @@ function Home() {
               <span className="text-gold">Everywhere.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/70 md:text-lg">
-              Verified rentals, honest fees, and a real middleman on every deal. Search across every state and LGA in the country.
+              The most trusted source for verified rentals and neighbourhood insights across the country.
             </p>
           </div>
 
-          {/* Search card */}
+          {/* Search card — three section bar matching chosen layout */}
           <form
             onSubmit={handleSearch}
-            className="mx-auto mt-10 max-w-5xl rounded-2xl border border-primary/5 bg-card p-2 shadow-[0_32px_64px_-16px_rgb(0_48_135_/_0.15)]"
+            className="mx-auto mt-10 flex max-w-3xl items-stretch gap-1 rounded-2xl border border-primary/5 bg-card p-2 shadow-[0_32px_64px_-16px_rgb(0_48_135_/_0.15)]"
           >
-            <div className="grid gap-1 md:grid-cols-[1.4fr_1.2fr_1fr_1fr_auto] md:items-stretch">
-              <HeroField label="State">
-                <select
-                  value={state}
-                  onChange={(e) => { setState(e.target.value); setLga(""); }}
-                  className="hero-select"
-                >
-                  <option value="">All states</option>
-                  {STATES.map((s) => <option key={s} value={s}>{s}</option>)}
-                </select>
-              </HeroField>
-              <HeroField label="LGA / Area" divider>
-                <select
-                  value={lga}
-                  onChange={(e) => setLga(e.target.value)}
-                  disabled={!state}
-                  className="hero-select disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  <option value="">{state ? "Any LGA" : "Pick a state first"}</option>
-                  {lgaOptions.map((l) => <option key={l} value={l}>{l}</option>)}
-                </select>
-              </HeroField>
-              <HeroField label="Property" divider>
-                <select value={propertyType} onChange={(e) => setPropertyType(e.target.value)} className="hero-select">
-                  <option value="">Any type</option>
-                  {PROPERTY_TYPES.map((p) => <option key={p} value={p}>{p}</option>)}
-                </select>
-              </HeroField>
-              <HeroField label="Rental" divider>
-                <select value={type} onChange={(e) => setType(e.target.value as "long-term" | "shortlet" | "")} className="hero-select">
-                  <option value="">Long-term & shortlet</option>
-                  <option value="long-term">Long-term (yearly)</option>
-                  <option value="shortlet">Shortlet (per night)</option>
-                </select>
-              </HeroField>
-              <button type="submit" className="m-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
-                <Search className="h-4 w-4" /> Search
-              </button>
+            <div className="flex flex-1 min-w-0 items-center gap-2 px-3">
+              <Search className="h-4 w-4 shrink-0 text-primary/40" />
+              <select
+                value={state}
+                onChange={(e) => { setState(e.target.value); setLga(""); }}
+                className="hero-select flex-1 min-w-0"
+                aria-label="State"
+              >
+                <option value="">Any state</option>
+                {STATES.map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
+              <span className="hidden h-6 w-px bg-primary/10 sm:block" />
+              <select
+                value={lga}
+                onChange={(e) => setLga(e.target.value)}
+                disabled={!state}
+                className="hero-select hidden flex-1 min-w-0 disabled:cursor-not-allowed disabled:opacity-40 sm:block"
+                aria-label="LGA"
+              >
+                <option value="">{state ? "Any LGA" : "Pick state"}</option>
+                {lgaOptions.map((l) => <option key={l} value={l}>{l}</option>)}
+              </select>
             </div>
+            <div className="hidden items-center gap-2 border-l border-primary/10 px-4 md:flex">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-primary/40">Type</span>
+              <select
+                value={type}
+                onChange={(e) => setType(e.target.value as "long-term" | "shortlet" | "")}
+                className="hero-select font-semibold text-primary"
+                aria-label="Rental type"
+              >
+                <option value="">For Rent</option>
+                <option value="long-term">Long-term</option>
+                <option value="shortlet">Shortlet</option>
+              </select>
+            </div>
+            <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-4 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95 sm:px-8">
+              <Search className="h-4 w-4 sm:hidden" />
+              <span className="hidden sm:inline">Search</span>
+            </button>
           </form>
 
           {/* Popular pills */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <span className="mr-1 text-xs font-bold uppercase tracking-widest text-primary/40">Popular</span>
             {[
-              { state: "Lagos", area: "Eti Osa", label: "Lekki, Lagos" },
-              { state: "FCT - Abuja", area: "Municipal Area Council", label: "Wuse, Abuja" },
+              { state: "Lagos", area: "Eti Osa", label: "Lekki" },
+              { state: "FCT - Abuja", area: "Municipal Area Council", label: "Wuse" },
               { state: "Rivers", area: "Port Harcourt", label: "Port Harcourt" },
               { state: "Oyo", area: "Ibadan North", label: "Ibadan" },
               { state: "Enugu", area: "Enugu North", label: "Enugu" },
@@ -159,7 +160,7 @@ function Home() {
         <div className="flex items-end justify-between gap-4 border-b-2 border-primary/5 pb-8">
           <div>
             <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">New to Market</h2>
-            <p className="mt-2 text-base font-medium text-primary/60">Fresh verified listings across the country, curated this week.</p>
+            <p className="mt-2 text-base font-medium text-primary/60">Exclusive listings curated for refined lifestyles.</p>
           </div>
           <Link to="/listings" className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
             See all <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
