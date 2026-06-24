@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { ListingCard } from "@/components/site/ListingCard";
 import { LISTINGS, PROPERTY_TYPES, formatNaira } from "@/lib/listings";
 import { NIGERIA, STATES } from "@/lib/nigeria";
+import heroHouse from "@/assets/hero-house.jpg";
 
 const REGIONS: { name: string; states: string[] }[] = [
   { name: "South-West", states: ["Lagos","Ogun","Oyo","Osun","Ondo","Ekiti"] },
@@ -19,10 +20,10 @@ const REGIONS: { name: string; states: string[] }[] = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Landech, rent verified homes anywhere in Nigeria" },
-      { name: "description", content: "Find verified apartments, self-cons and shortlets across all 36 states and FCT. No hidden fees. Landech handles every enquiry safely." },
-      { property: "og:title", content: "Landech, rent verified homes anywhere in Nigeria" },
-      { property: "og:description", content: "Verified landlords and agents. Honest fees. Real-time search across all 774 LGAs." },
+      { title: "Landech — rent a home you can actually trust" },
+      { name: "description", content: "Verified landlords. Honest fees shown up front. Every enquiry handled by a real human so nobody ghosts you mid-search." },
+      { property: "og:title", content: "Landech — rent a home you can actually trust" },
+      { property: "og:description", content: "Verified hosts, capped fees, and a middleman on every deal. Rentals across every state in Nigeria." },
     ],
   }),
   component: Home,
@@ -64,17 +65,28 @@ function Home() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero — Editorial Luxe Canvas */}
-      <section className="bg-background">
-        <div className="container-page pt-16 pb-12 md:pt-24 md:pb-16">
+      {/* Hero — Editorial Luxe Canvas with faded house backdrop */}
+      <section className="relative overflow-hidden bg-background">
+        {/* Backdrop house illustration */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-0 bg-center bg-no-repeat opacity-[0.07] [background-size:90%_auto] md:opacity-[0.09] md:[background-size:70%_auto]"
+          style={{ backgroundImage: `url(${heroHouse})` }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-40 bg-gradient-to-b from-transparent to-background"
+        />
+
+        <div className="container-page relative pt-16 pb-12 md:pt-24 md:pb-16">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-primary md:text-7xl lg:text-[5.5rem]">
               Find home.
               <br />
-              <span className="text-gold">Everywhere.</span>
+              <span className="text-gold">Without the run-around.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/70 md:text-lg">
-              The most trusted source for verified rentals and neighbourhood insights across the country.
+              Rentals from verified hosts, with prices, fees and floor plans laid bare before you ever pick up the phone.
             </p>
           </div>
 
@@ -149,9 +161,9 @@ function Home() {
       {/* Trust strip */}
       <section className="container-page pt-4 pb-12">
         <div className="grid gap-8 md:grid-cols-3">
-          <TrustItem icon={<ShieldCheck className="h-5 w-5" />} title="Verified landlords and agents" body="Every host submits NIN, ID and property documents before they can list." />
-          <TrustItem icon={<MessageSquare className="h-5 w-5" />} title="Landech as middleman" body="Enquiries route through us. No one disappears, no one drags you offline." />
-          <TrustItem icon={<Wallet className="h-5 w-5" />} title="Honest fees, upfront" body="Agency fees and caution deposits are shown on every listing, before you reach out." />
+          <TrustItem icon={<ShieldCheck className="h-5 w-5" />} title="Every host, ID-checked" body="Landlords and agents clear identity and document checks before a single photo goes live." />
+          <TrustItem icon={<MessageSquare className="h-5 w-5" />} title="A human in the middle" body="Your first message comes to us. We hand it to the host and bring the reply back, on the record." />
+          <TrustItem icon={<Wallet className="h-5 w-5" />} title="No surprise fees" body="Rent, caution, agency and legal — every number is on the listing before you tap enquire." />
         </div>
       </section>
 
@@ -159,8 +171,8 @@ function Home() {
       <section className="container-page py-12">
         <div className="flex items-end justify-between gap-4 border-b-2 border-primary/5 pb-8">
           <div>
-            <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">New to Market</h2>
-            <p className="mt-2 text-base font-medium text-primary/60">Exclusive listings curated for refined lifestyles.</p>
+            <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">Fresh off the market</h2>
+            <p className="mt-2 text-base font-medium text-primary/60">Homes listed this week — checked, photographed and ready to tour.</p>
           </div>
           <Link to="/listings" className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
             See all <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -181,10 +193,10 @@ function Home() {
         <div className="flex flex-col items-center justify-between gap-12 rounded-[2rem] bg-primary p-10 text-primary-foreground md:flex-row md:p-16">
           <div className="max-w-md text-center md:text-left">
             <h2 className="font-display text-3xl font-bold md:text-4xl">
-              Renting is local. <span className="text-gold">So are we.</span>
+              A neighbour, <span className="text-gold">in every city.</span>
             </h2>
             <p className="mt-4 text-base font-medium text-primary-foreground/70">
-              Deep coverage of every Nigerian state, with verified hosts on the ground in the cities that move fastest.
+              Real people on the ground in the places that move fastest — so you hear back the same day, not next week.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-x-12 gap-y-8 md:gap-x-16">
@@ -242,9 +254,9 @@ function Home() {
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
               <BadgeCheck className="h-3 w-3" /> How Landech works
             </span>
-            <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">From search to keys, in four simple steps.</h2>
+            <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">Four steps. No back-and-forth.</h2>
             <p className="mt-4 text-muted-foreground">
-              We sit between renters and hosts so nothing falls through the cracks. Every message and fee is on the record.
+              You search, we relay, the host replies, you move in. Every message and naira is on the record, end to end.
             </p>
             <Link to="/how-it-works" className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
               Read the full guide <ChevronRight className="h-4 w-4" />
@@ -252,10 +264,10 @@ function Home() {
           </div>
           <ol className="space-y-4">
             {[
-              { t: "Search verified homes", d: "Filter by state, LGA, property type and rental period across all of Nigeria." },
-              { t: "Enquire through Landech", d: "Your message goes to us first. We notify the host and route their reply back to you." },
-              { t: "Chat safely in-app", d: "All follow-up happens in our messaging system. No ghosting, no offline run-around." },
-              { t: "Move in or check in", d: "Pay shortlets securely via Paystack. Yearly rent is paid offline, with the deal logged for transparency." },
+              { t: "Search homes that exist", d: "Photos, prices and floor plans are checked before a listing goes live — no bait, no recycled ads." },
+              { t: "Send the first message", d: "It lands with us. We pass it to the host with your context already attached." },
+              { t: "Reply in one thread", d: "Everything stays inside Landech — no WhatsApp scavenger hunt, no disappearing numbers." },
+              { t: "Sign and settle", d: "Shortlets pay through Paystack with a refund if a host cancels. Yearly rent is logged the moment it changes hands." },
             ].map((s, i) => (
               <li key={s.t} className="flex gap-4 rounded-2xl border border-border bg-card p-5">
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">{i + 1}</span>
@@ -276,11 +288,10 @@ function Home() {
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
               <BadgeCheck className="h-3 w-3" /> Why Landech
             </span>
-            <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">A renting experience built around trust.</h2>
+            <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">Renting, rebuilt around the renter.</h2>
             <p className="mt-4 text-muted-foreground">
-              Nigerian renting has been broken for too long. Inflated agent fees, ghosted enquiries,
-              fake listings. Landech is rebuilding it from scratch around verified people, real prices,
-              and transparent communication.
+              Padded agency fees. Phantom listings. Phones that ring out the day before move-in. We've taken renting apart
+              and put it back together around real people, real prices, and one place where everything is written down.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/how-it-works" className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">How it works</Link>
@@ -289,10 +300,10 @@ function Home() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              { t: "₦0 to list", d: "Landlords post for free, forever." },
-              { t: "Capped fees", d: "Agency fees are bounded and disclosed up front." },
-              { t: "Refundable shortlets", d: "Paystack-secured payments. Full refund if a host cancels." },
-              { t: "Real identities", d: "NIMC NIN verification is non-negotiable for hosts." },
+              { t: "₦0 to list", d: "Hosts post and renew for free, no upgrade walls." },
+              { t: "Caps, not surprises", d: "Agency and legal fees are disclosed in naira, on the listing." },
+              { t: "Money-back shortlets", d: "Paystack-secured stays, refunded in full when a host bails." },
+              { t: "Real, ID-checked people", d: "Every host clears NIN and document checks before going live." },
             ].map((b) => (
               <div key={b.t} className="rounded-2xl border border-border bg-card p-5">
                 <div className="font-display text-xl text-primary">{b.t}</div>
@@ -307,8 +318,8 @@ function Home() {
       <section className="container-page py-16">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="font-display text-3xl text-foreground md:text-4xl">Stories from real renters</h2>
-            <p className="mt-2 text-muted-foreground">Early users from across the country sharing how Landech changed their search.</p>
+            <h2 className="font-display text-3xl text-foreground md:text-4xl">In their own words.</h2>
+            <p className="mt-2 text-muted-foreground">Renters, landlords and agents on what changed when they switched.</p>
           </div>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -337,22 +348,24 @@ function Home() {
       {/* For hosts split CTA */}
       <section className="container-page py-16">
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border border-border bg-card p-8 md:p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[oklch(0.97_0.02_85)] p-8 md:p-10">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
             <div className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
               <Building2 className="h-3 w-3" /> Landlords
             </div>
-            <h3 className="mt-4 font-display text-2xl text-foreground">List your property in minutes.</h3>
-            <p className="mt-2 text-muted-foreground">Direct from landlord listings get a verified badge once your documents are approved. Zero fees, ever.</p>
+            <h3 className="mt-4 font-display text-2xl text-foreground">Put your keys in the right hands.</h3>
+            <p className="mt-2 text-muted-foreground">Free to list, forever. Get the verified badge the moment your documents clear, and reach renters who are actually ready to move.</p>
             <Link to="/for-landlords" className="mt-6 inline-flex rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
-              Become a landlord
+              List a property
             </Link>
           </div>
-          <div className="rounded-3xl border border-border bg-foreground p-8 text-background md:p-10">
-            <div className="inline-flex items-center gap-2 rounded-full bg-background/15 px-3 py-1 text-xs font-semibold text-background">
+          <div className="relative overflow-hidden rounded-3xl bg-primary p-8 text-primary-foreground md:p-10">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-3 py-1 text-xs font-semibold text-primary-foreground">
               <Users className="h-3 w-3" /> Agents
             </div>
-            <h3 className="mt-4 font-display text-2xl">Grow with a verified profile.</h3>
-            <p className="mt-2 text-background/80">Start on Basic for free. Upgrade to Verified for unlimited listings, priority placement and the trust badge serious renters look for.</p>
+            <h3 className="mt-4 font-display text-2xl">Build a name renters trust.</h3>
+            <p className="mt-2 text-primary-foreground/80">Start free on Basic. Step up to Verified for unlimited listings, priority placement and the badge serious renters look for first.</p>
             <Link to="/for-agents" className="mt-6 inline-flex rounded-xl bg-gold px-5 py-3 text-sm font-semibold text-gold-foreground hover:opacity-95">
               Join as an agent
             </Link>
@@ -362,17 +375,18 @@ function Home() {
 
       {/* Final CTA */}
       <section className="container-page pb-20">
-        <div className="overflow-hidden rounded-3xl bg-primary px-8 py-12 text-primary-foreground md:px-14 md:py-16">
+        <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[oklch(0.97_0.02_85)] px-8 py-12 md:px-14 md:py-16">
+          <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
           <div className="grid items-center gap-8 md:grid-cols-[1.4fr_1fr]">
             <div>
-              <h2 className="font-display text-3xl md:text-4xl">Ready to find a home you can trust?</h2>
-              <p className="mt-3 max-w-lg text-primary-foreground/85">
-                Tens of thousands of rentals across every Nigerian state. Honest fees, verified hosts, and a real middleman on every deal.
+              <h2 className="font-display text-3xl text-primary md:text-4xl">A home you can settle into — found honestly.</h2>
+              <p className="mt-3 max-w-lg text-foreground/70">
+                Browse verified rentals, message hosts without games, and lock in a place you've actually seen. No padded fees, no ghost agents.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
-              <Link to="/listings" className="rounded-xl bg-gold px-5 py-3 text-sm font-semibold text-gold-foreground shadow-soft hover:opacity-95">Browse rentals</Link>
-              <Link to="/signup" className="rounded-xl border border-primary-foreground/30 px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10">Create an account</Link>
+              <Link to="/listings" className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:bg-primary/90">Browse rentals</Link>
+              <Link to="/signup" className="rounded-xl border border-primary/20 bg-card px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-soft">Create an account</Link>
             </div>
           </div>
         </div>
