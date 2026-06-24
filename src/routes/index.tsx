@@ -20,10 +20,10 @@ const REGIONS: { name: string; states: string[] }[] = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Landech, rent verified homes anywhere in Nigeria" },
-      { name: "description", content: "Find verified apartments, self-cons and shortlets across all 36 states and FCT. No hidden fees. Landech handles every enquiry safely." },
-      { property: "og:title", content: "Landech, rent verified homes anywhere in Nigeria" },
-      { property: "og:description", content: "Verified landlords and agents. Honest fees. Real-time search across all 774 LGAs." },
+      { title: "Landech — rent a home you can actually trust" },
+      { name: "description", content: "Verified landlords. Honest fees shown up front. Every enquiry handled by a real human so nobody ghosts you mid-search." },
+      { property: "og:title", content: "Landech — rent a home you can actually trust" },
+      { property: "og:description", content: "Verified hosts, capped fees, and a middleman on every deal. Rentals across every state in Nigeria." },
     ],
   }),
   component: Home,
