@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { ListingCard } from "@/components/site/ListingCard";
 import { LISTINGS, PROPERTY_TYPES, formatNaira } from "@/lib/listings";
 import { NIGERIA, STATES } from "@/lib/nigeria";
+import heroHouse from "@/assets/hero-house.jpg";
 
 const REGIONS: { name: string; states: string[] }[] = [
   { name: "South-West", states: ["Lagos","Ogun","Oyo","Osun","Ondo","Ekiti"] },
