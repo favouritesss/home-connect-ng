@@ -254,9 +254,9 @@ function Home() {
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
               <BadgeCheck className="h-3 w-3" /> How Landech works
             </span>
-            <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">From search to keys, in four simple steps.</h2>
+            <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">Four steps. No back-and-forth.</h2>
             <p className="mt-4 text-muted-foreground">
-              We sit between renters and hosts so nothing falls through the cracks. Every message and fee is on the record.
+              You search, we relay, the host replies, you move in. Every message and naira is on the record, end to end.
             </p>
             <Link to="/how-it-works" className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
               Read the full guide <ChevronRight className="h-4 w-4" />
