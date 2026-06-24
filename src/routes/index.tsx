@@ -264,10 +264,10 @@ function Home() {
           </div>
           <ol className="space-y-4">
             {[
-              { t: "Search verified homes", d: "Filter by state, LGA, property type and rental period across all of Nigeria." },
-              { t: "Enquire through Landech", d: "Your message goes to us first. We notify the host and route their reply back to you." },
-              { t: "Chat safely in-app", d: "All follow-up happens in our messaging system. No ghosting, no offline run-around." },
-              { t: "Move in or check in", d: "Pay shortlets securely via Paystack. Yearly rent is paid offline, with the deal logged for transparency." },
+              { t: "Search homes that exist", d: "Photos, prices and floor plans are checked before a listing goes live — no bait, no recycled ads." },
+              { t: "Send the first message", d: "It lands with us. We pass it to the host with your context already attached." },
+              { t: "Reply in one thread", d: "Everything stays inside Landech — no WhatsApp scavenger hunt, no disappearing numbers." },
+              { t: "Sign and settle", d: "Shortlets pay through Paystack with a refund if a host cancels. Yearly rent is logged the moment it changes hands." },
             ].map((s, i) => (
               <li key={s.t} className="flex gap-4 rounded-2xl border border-border bg-card p-5">
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">{i + 1}</span>
