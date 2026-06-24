@@ -394,10 +394,10 @@ function Home() {
   );
 }
 
-function HeroField({ label, children }: { label: string; children: React.ReactNode }) {
+function HeroField({ label, children, divider }: { label: string; children: React.ReactNode; divider?: boolean }) {
   return (
-    <label className="flex flex-col gap-1 rounded-xl px-3 py-2 hover:bg-muted">
-      <span className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">{label}</span>
+    <label className={`flex flex-col justify-center gap-0.5 px-5 py-3 ${divider ? "md:border-l md:border-primary/10" : ""}`}>
+      <span className="text-[10px] font-bold uppercase tracking-widest text-primary/40">{label}</span>
       {children}
     </label>
   );
@@ -415,11 +415,67 @@ function TrustItem({ icon, title, body }: { icon: React.ReactNode; title: string
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
+function StatLuxe({ value, label }: { value: string; label: string }) {
   return (
     <div>
-      <div className="font-display text-3xl text-primary md:text-4xl">{value}</div>
-      <div className="mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">{label}</div>
+      <p className="font-display text-4xl font-extrabold text-primary-foreground md:text-5xl">{value}</p>
+      <p className="mt-1 text-[10px] font-black uppercase tracking-[0.2em] text-gold">{label}</p>
     </div>
   );
 }
+
+function EditorialCard({ listing }: { listing: import("@/lib/listings").Listing }) {
+  return (
+    <Link
+      to="/listings/$id"
+      params={{ id: listing.id }}
+      className="group block cursor-pointer"
+    >
+      <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted">
+        <img
+          src={listing.image}
+          alt={listing.title}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute left-5 top-5">
+          <span className="rounded-full bg-card/95 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-primary shadow-soft backdrop-blur">
+            {listing.type === "shortlet" ? "Shortlet" : "New listing"}
+          </span>
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent p-6">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-primary-foreground/80">
+            {listing.area}, {listing.state}
+          </p>
+          <h3 className="mt-1 font-display text-2xl font-bold text-primary-foreground">
+            {formatNaira(listing.price)}
+            <span className="ml-1 text-sm font-medium text-primary-foreground/70">
+              {listing.type === "shortlet" ? "/ night" : "/ year"}
+            </span>
+          </h3>
+        </div>
+      </div>
+      <div className="mt-5 flex items-center justify-between">
+        <div className="min-w-0 space-y-1">
+          <p className="truncate font-bold text-primary">{listing.title}</p>
+          <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-tight text-primary/40">
+            <span>{listing.bedrooms} Bed</span>
+            <span className="h-1 w-1 rounded-full bg-gold" />
+            <span>{listing.bathrooms} Bath</span>
+            <span className="h-1 w-1 rounded-full bg-gold" />
+            <span>{listing.propertyType}</span>
+          </div>
+        </div>
+        <button
+          type="button"
+          aria-label="Save"
+          onClick={(e) => { e.preventDefault(); }}
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+        >
+          <Heart className="h-4 w-4" />
+        </button>
+      </div>
+    </Link>
+  );
+}
+
