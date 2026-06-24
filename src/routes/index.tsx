@@ -1,12 +1,11 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Search, ShieldCheck, Sparkles, MessageSquare, ArrowRight, BadgeCheck, Wallet, Users, Building2, Quote, Star, ChevronRight } from "lucide-react";
+import { Search, ShieldCheck, MessageSquare, ArrowRight, BadgeCheck, Wallet, Users, Building2, Quote, Star, ChevronRight, Heart, MapPin } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { ListingCard } from "@/components/site/ListingCard";
-import { LISTINGS, PROPERTY_TYPES } from "@/lib/listings";
+import { LISTINGS, PROPERTY_TYPES, formatNaira } from "@/lib/listings";
 import { NIGERIA, STATES } from "@/lib/nigeria";
-import heroImg from "@/assets/hero-lagos.jpg";
 
 const REGIONS: { name: string; states: string[] }[] = [
   { name: "South-West", states: ["Lagos","Ogun","Oyo","Osun","Ondo","Ekiti"] },
@@ -65,33 +64,26 @@ function Home() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImg} alt="Modern apartment building at golden hour" width={1920} height={1080} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/65 to-primary/30" />
-        </div>
-
-        <div className="container-page relative py-20 md:py-28">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-primary">
-              <Sparkles className="h-3 w-3" /> Verified homes, honest fees, zero ghosting
-            </span>
-            <h1 className="mt-5 font-display text-4xl leading-[1.05] text-background sm:text-5xl md:text-6xl">
-              A simpler way to rent. Anywhere you call home.
+      {/* Hero — Editorial Luxe Canvas */}
+      <section className="bg-background">
+        <div className="container-page pt-16 pb-12 md:pt-24 md:pb-16">
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-primary md:text-7xl lg:text-[5.5rem]">
+              Find home.
+              <br />
+              <span className="text-gold">Everywhere.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-base text-background/85 md:text-lg">
-              Verified landlords and agents, honest fees, no ghosting.
-              Every enquiry passes through Landech, safely.
+            <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/70 md:text-lg">
+              Verified rentals, honest fees, and a real middleman on every deal. Search across every state and LGA in the country.
             </p>
           </div>
 
-          {/* Search panel, cascading dropdowns */}
+          {/* Search card */}
           <form
             onSubmit={handleSearch}
-            className="mt-10 rounded-2xl bg-background p-3 shadow-lift md:max-w-5xl"
+            className="mx-auto mt-10 max-w-5xl rounded-2xl border border-primary/5 bg-card p-2 shadow-[0_32px_64px_-16px_rgb(0_48_135_/_0.15)]"
           >
-            <div className="grid gap-2 md:grid-cols-[1fr_1fr_1fr_1fr_1fr_auto]">
+            <div className="grid gap-1 md:grid-cols-[1.4fr_1.2fr_1fr_1fr_auto] md:items-stretch">
               <HeroField label="State">
                 <select
                   value={state}
@@ -102,7 +94,7 @@ function Home() {
                   {STATES.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
               </HeroField>
-              <HeroField label="LGA / Area">
+              <HeroField label="LGA / Area" divider>
                 <select
                   value={lga}
                   onChange={(e) => setLga(e.target.value)}
@@ -113,33 +105,28 @@ function Home() {
                   {lgaOptions.map((l) => <option key={l} value={l}>{l}</option>)}
                 </select>
               </HeroField>
-              <HeroField label="Property">
+              <HeroField label="Property" divider>
                 <select value={propertyType} onChange={(e) => setPropertyType(e.target.value)} className="hero-select">
                   <option value="">Any type</option>
                   {PROPERTY_TYPES.map((p) => <option key={p} value={p}>{p}</option>)}
                 </select>
               </HeroField>
-              <HeroField label="Rental">
+              <HeroField label="Rental" divider>
                 <select value={type} onChange={(e) => setType(e.target.value as "long-term" | "shortlet" | "")} className="hero-select">
                   <option value="">Long-term & shortlet</option>
                   <option value="long-term">Long-term (yearly)</option>
                   <option value="shortlet">Shortlet (per night)</option>
                 </select>
               </HeroField>
-              <HeroField label="Bedrooms">
-                <select value={bedrooms} onChange={(e) => setBedrooms(e.target.value)} className="hero-select">
-                  <option value="">Any</option>
-                  {[1,2,3,4].map((n) => <option key={n} value={n}>{n}+ beds</option>)}
-                </select>
-              </HeroField>
-              <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-colors hover:bg-primary/90">
+              <button type="submit" className="m-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
                 <Search className="h-4 w-4" /> Search
               </button>
             </div>
           </form>
 
-          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-background/85">
-            <span className="font-semibold text-background">Popular:</span>
+          {/* Popular pills */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <span className="mr-1 text-xs font-bold uppercase tracking-widest text-primary/40">Popular</span>
             {[
               { state: "Lagos", area: "Eti Osa", label: "Lekki, Lagos" },
               { state: "FCT - Abuja", area: "Municipal Area Council", label: "Wuse, Abuja" },
@@ -151,25 +138,15 @@ function Home() {
                 key={s.label}
                 to="/listings"
                 search={{ state: s.state, area: s.area }}
-                className="rounded-full bg-background/15 px-3 py-1 text-background hover:bg-background/25"
+                className="rounded-full border border-gold/60 px-5 py-2 text-xs font-bold text-primary transition-all hover:bg-gold hover:text-gold-foreground"
               >{s.label}</Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stat strip */}
-      <section className="border-b border-border/60 bg-surface">
-        <div className="container-page grid grid-cols-2 gap-6 py-10 md:grid-cols-4">
-          <Stat value={`${totalListings}+`} label="Active rentals nationwide" />
-          <Stat value={`${totalStates}`} label="States covered" />
-          <Stat value={`${totalLgas}`} label="LGAs searchable" />
-          <Stat value="₦0" label="Cost to list a property" />
-        </div>
-      </section>
-
       {/* Trust strip */}
-      <section className="container-page py-16">
+      <section className="container-page pt-4 pb-12">
         <div className="grid gap-8 md:grid-cols-3">
           <TrustItem icon={<ShieldCheck className="h-5 w-5" />} title="Verified landlords and agents" body="Every host submits NIN, ID and property documents before they can list." />
           <TrustItem icon={<MessageSquare className="h-5 w-5" />} title="Landech as middleman" body="Enquiries route through us. No one disappears, no one drags you offline." />
@@ -177,21 +154,47 @@ function Home() {
         </div>
       </section>
 
-      {/* Featured */}
-      <section className="container-page pb-4 md:pb-8">
-        <div className="flex items-end justify-between gap-4">
+      {/* New to Market — editorial cards */}
+      <section className="container-page py-12">
+        <div className="flex items-end justify-between gap-4 border-b-2 border-primary/5 pb-8">
           <div>
-            <h2 className="font-display text-3xl text-foreground md:text-4xl">Fresh on Landech</h2>
-            <p className="mt-2 text-muted-foreground">{totalListings} verified homes available across Nigeria right now.</p>
+            <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">New to Market</h2>
+            <p className="mt-2 text-base font-medium text-primary/60">Fresh verified listings across the country, curated this week.</p>
           </div>
-          <Link to="/listings" className="hidden items-center gap-1 text-sm font-semibold text-primary hover:underline sm:inline-flex">
-            See all <ArrowRight className="h-4 w-4" />
+          <Link to="/listings" className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
+            See all <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((l) => <ListingCard key={l.id} listing={l} />)}
+
+        <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-3">
+          {featured.slice(0, 3).map((l) => <EditorialCard key={l.id} listing={l} />)}
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.slice(3, 6).map((l) => <ListingCard key={l.id} listing={l} />)}
         </div>
       </section>
+
+      {/* Market presence — navy stats panel */}
+      <section className="container-page py-12">
+        <div className="flex flex-col items-center justify-between gap-12 rounded-[2rem] bg-primary p-10 text-primary-foreground md:flex-row md:p-16">
+          <div className="max-w-md text-center md:text-left">
+            <h2 className="font-display text-3xl font-bold md:text-4xl">
+              Renting is local. <span className="text-gold">So are we.</span>
+            </h2>
+            <p className="mt-4 text-base font-medium text-primary-foreground/70">
+              Deep coverage of every Nigerian state, with verified hosts on the ground in the cities that move fastest.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-x-12 gap-y-8 md:gap-x-16">
+            <StatLuxe value={`${totalListings}+`} label="Active rentals" />
+            <StatLuxe value={`${totalStates}`} label="States covered" />
+            <StatLuxe value={`${totalLgas}`} label="LGAs searchable" />
+            <StatLuxe value="₦0" label="Cost to list" />
+          </div>
+        </div>
+      </section>
+
 
       {/* Region quick browse, compact replacement for the old grid */}
       <section className="container-page py-16">
@@ -391,10 +394,10 @@ function Home() {
   );
 }
 
-function HeroField({ label, children }: { label: string; children: React.ReactNode }) {
+function HeroField({ label, children, divider }: { label: string; children: React.ReactNode; divider?: boolean }) {
   return (
-    <label className="flex flex-col gap-1 rounded-xl px-3 py-2 hover:bg-muted">
-      <span className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">{label}</span>
+    <label className={`flex flex-col justify-center gap-0.5 px-5 py-3 ${divider ? "md:border-l md:border-primary/10" : ""}`}>
+      <span className="text-[10px] font-bold uppercase tracking-widest text-primary/40">{label}</span>
       {children}
     </label>
   );
@@ -412,11 +415,67 @@ function TrustItem({ icon, title, body }: { icon: React.ReactNode; title: string
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
+function StatLuxe({ value, label }: { value: string; label: string }) {
   return (
     <div>
-      <div className="font-display text-3xl text-primary md:text-4xl">{value}</div>
-      <div className="mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">{label}</div>
+      <p className="font-display text-4xl font-extrabold text-primary-foreground md:text-5xl">{value}</p>
+      <p className="mt-1 text-[10px] font-black uppercase tracking-[0.2em] text-gold">{label}</p>
     </div>
   );
 }
+
+function EditorialCard({ listing }: { listing: import("@/lib/listings").Listing }) {
+  return (
+    <Link
+      to="/listings/$id"
+      params={{ id: listing.id }}
+      className="group block cursor-pointer"
+    >
+      <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted">
+        <img
+          src={listing.image}
+          alt={listing.title}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute left-5 top-5">
+          <span className="rounded-full bg-card/95 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-primary shadow-soft backdrop-blur">
+            {listing.type === "shortlet" ? "Shortlet" : "New listing"}
+          </span>
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent p-6">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-primary-foreground/80">
+            {listing.area}, {listing.state}
+          </p>
+          <h3 className="mt-1 font-display text-2xl font-bold text-primary-foreground">
+            {formatNaira(listing.price)}
+            <span className="ml-1 text-sm font-medium text-primary-foreground/70">
+              {listing.type === "shortlet" ? "/ night" : "/ year"}
+            </span>
+          </h3>
+        </div>
+      </div>
+      <div className="mt-5 flex items-center justify-between">
+        <div className="min-w-0 space-y-1">
+          <p className="truncate font-bold text-primary">{listing.title}</p>
+          <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-tight text-primary/40">
+            <span>{listing.bedrooms} Bed</span>
+            <span className="h-1 w-1 rounded-full bg-gold" />
+            <span>{listing.bathrooms} Bath</span>
+            <span className="h-1 w-1 rounded-full bg-gold" />
+            <span>{listing.propertyType}</span>
+          </div>
+        </div>
+        <button
+          type="button"
+          aria-label="Save"
+          onClick={(e) => { e.preventDefault(); }}
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+        >
+          <Heart className="h-4 w-4" />
+        </button>
+      </div>
+    </Link>
+  );
+}
+
