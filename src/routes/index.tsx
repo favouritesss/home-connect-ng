@@ -1,12 +1,11 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Search, ShieldCheck, Sparkles, MessageSquare, ArrowRight, BadgeCheck, Wallet, Users, Building2, Quote, Star, ChevronRight } from "lucide-react";
+import { Search, ShieldCheck, MessageSquare, ArrowRight, BadgeCheck, Wallet, Users, Building2, Quote, Star, ChevronRight, Heart, MapPin } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { ListingCard } from "@/components/site/ListingCard";
-import { LISTINGS, PROPERTY_TYPES } from "@/lib/listings";
+import { LISTINGS, PROPERTY_TYPES, formatNaira } from "@/lib/listings";
 import { NIGERIA, STATES } from "@/lib/nigeria";
-import heroImg from "@/assets/hero-lagos.jpg";
 
 const REGIONS: { name: string; states: string[] }[] = [
   { name: "South-West", states: ["Lagos","Ogun","Oyo","Osun","Ondo","Ekiti"] },
