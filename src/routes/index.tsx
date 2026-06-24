@@ -161,9 +161,9 @@ function Home() {
       {/* Trust strip */}
       <section className="container-page pt-4 pb-12">
         <div className="grid gap-8 md:grid-cols-3">
-          <TrustItem icon={<ShieldCheck className="h-5 w-5" />} title="Verified landlords and agents" body="Every host submits NIN, ID and property documents before they can list." />
-          <TrustItem icon={<MessageSquare className="h-5 w-5" />} title="Landech as middleman" body="Enquiries route through us. No one disappears, no one drags you offline." />
-          <TrustItem icon={<Wallet className="h-5 w-5" />} title="Honest fees, upfront" body="Agency fees and caution deposits are shown on every listing, before you reach out." />
+          <TrustItem icon={<ShieldCheck className="h-5 w-5" />} title="Every host, ID-checked" body="Landlords and agents clear identity and document checks before a single photo goes live." />
+          <TrustItem icon={<MessageSquare className="h-5 w-5" />} title="A human in the middle" body="Your first message comes to us. We hand it to the host and bring the reply back, on the record." />
+          <TrustItem icon={<Wallet className="h-5 w-5" />} title="No surprise fees" body="Rent, caution, agency and legal — every number is on the listing before you tap enquire." />
         </div>
       </section>
 
