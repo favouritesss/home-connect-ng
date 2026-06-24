@@ -193,10 +193,10 @@ function Home() {
         <div className="flex flex-col items-center justify-between gap-12 rounded-[2rem] bg-primary p-10 text-primary-foreground md:flex-row md:p-16">
           <div className="max-w-md text-center md:text-left">
             <h2 className="font-display text-3xl font-bold md:text-4xl">
-              Renting is local. <span className="text-gold">So are we.</span>
+              A neighbour, <span className="text-gold">in every city.</span>
             </h2>
             <p className="mt-4 text-base font-medium text-primary-foreground/70">
-              Deep coverage of every Nigerian state, with verified hosts on the ground in the cities that move fastest.
+              Real people on the ground in the places that move fastest — so you hear back the same day, not next week.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-x-12 gap-y-8 md:gap-x-16">
