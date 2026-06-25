@@ -1,20 +1,18 @@
 import { Link } from "@tanstack/react-router";
-import { Home, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-border/60 bg-surface">
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground">
-              <Home className="h-4 w-4" strokeWidth={2.25} />
-            </span>
-            <span className="font-display text-2xl leading-none text-foreground">Landech</span>
+          <Link to="/" className="flex items-center gap-2.5">
+            <Logo size={36} className="text-primary" />
+            <span className="font-display text-2xl font-extrabold leading-none tracking-tight text-foreground">Landech</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Renting in Nigeria, made simple and transparent. Verified listings,
-            no hidden fees, and a trusted middleman on every deal, nationwide.
+            A rental platform that puts the paperwork, the price and the person on the same page, before you ever pick up the keys.
           </p>
           <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
             <li className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-primary" /> Serving all 36 states + FCT</li>
