@@ -165,7 +165,7 @@ function Home() {
       </section>
 
       {/* Trust strip */}
-      <section className="container-page pt-4 pb-12">
+      <section className="reveal container-page pt-4 pb-12">
         <div className="grid gap-8 md:grid-cols-3">
           <TrustItem icon={<ShieldCheck className="h-5 w-5" />} title="Every host, ID-checked" body="Landlords and agents clear identity and document checks before a single photo goes live." />
           <TrustItem icon={<MessageSquare className="h-5 w-5" />} title="A human in the middle" body="Your first message comes to us. We hand it to the host and bring the reply back, on the record." />
@@ -174,7 +174,7 @@ function Home() {
       </section>
 
       {/* New to Market, editorial cards */}
-      <section className="container-page py-12">
+      <section className="reveal container-page py-12">
         <div className="flex items-end justify-between gap-4 border-b-2 border-primary/5 pb-8">
           <div>
             <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">Fresh off the market</h2>
@@ -195,7 +195,7 @@ function Home() {
       </section>
 
       {/* Market presence, navy stats panel */}
-      <section className="container-page py-12">
+      <section className="reveal container-page py-12">
         <div className="flex flex-col items-center justify-between gap-12 rounded-[2rem] bg-primary p-10 text-primary-foreground md:flex-row md:p-16">
           <div className="max-w-md text-center md:text-left">
             <h2 className="font-display text-3xl font-bold md:text-4xl">
@@ -216,7 +216,7 @@ function Home() {
 
 
       {/* Region quick browse, compact replacement for the old grid */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="rounded-3xl border border-border/70 bg-gradient-to-br from-primary-soft/60 via-surface to-background p-8 md:p-12">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
@@ -254,7 +254,7 @@ function Home() {
       </section>
 
       {/* How it works mini */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
@@ -288,7 +288,7 @@ function Home() {
       </section>
 
       {/* Why Landech */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
@@ -321,7 +321,7 @@ function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-3xl text-foreground md:text-4xl">In their own words.</h2>
@@ -352,7 +352,7 @@ function Home() {
       </section>
 
       {/* For hosts split CTA */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[oklch(0.97_0.02_85)] p-8 md:p-10">
             <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
@@ -380,7 +380,7 @@ function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="container-page pb-20">
+      <section className="reveal container-page pb-20">
         <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[oklch(0.97_0.02_85)] px-8 py-12 md:px-14 md:py-16">
           <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
           <div className="grid items-center gap-8 md:grid-cols-[1.4fr_1fr]">
