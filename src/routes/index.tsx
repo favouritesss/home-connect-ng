@@ -67,32 +67,36 @@ function Home() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero — Editorial Luxe Canvas with photographic backdrop */}
-      <section className="relative overflow-hidden bg-background">
+      {/* Hero, Editorial Luxe Canvas with photographic backdrop */}
+      <section className="relative overflow-hidden">
         {/* Photographic backdrop, softly faded into the cream */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center opacity-[0.22] md:opacity-[0.28]"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroHome})` }}
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-background/70 via-background/55 to-background"
+          className="pointer-events-none absolute inset-0 bg-background/70 backdrop-blur-[2px]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background"
         />
 
         <div className="container-page relative pt-16 pb-12 md:pt-24 md:pb-16">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="reveal mx-auto max-w-4xl text-center">
             <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-primary md:text-7xl lg:text-[5.5rem]">
-              The keys are real.
+              Find home.
               <br />
-              <span className="text-gold">So is the landlord.</span>
+              <span className="text-gold">Without the run-around.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/75 md:text-lg">
-              Every home on Landech has been walked, photographed and priced in the open. Message the host, lock the date, move in. No phantom flats, no padded fees, no chasing.
+            <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/70 md:text-lg">
+              Rentals from verified hosts, with prices, fees and floor plans laid bare before you ever pick up the phone.
             </p>
           </div>
 
-          {/* Search card — three section bar matching chosen layout */}
+          {/* Search card, three section bar matching chosen layout */}
           <form
             onSubmit={handleSearch}
             className="mx-auto mt-10 flex max-w-3xl items-stretch gap-1 rounded-2xl border border-primary/5 bg-card p-2 shadow-[0_32px_64px_-16px_rgb(0_48_135_/_0.15)]"
