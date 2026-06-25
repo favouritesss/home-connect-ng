@@ -6,7 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { ListingCard } from "@/components/site/ListingCard";
 import { LISTINGS, PROPERTY_TYPES, formatNaira } from "@/lib/listings";
 import { NIGERIA, STATES } from "@/lib/nigeria";
-import heroHouse from "@/assets/hero-house.jpg";
+import heroHome from "@/assets/hero-home.jpg";
 
 const REGIONS: { name: string; states: string[] }[] = [
   { name: "South-West", states: ["Lagos","Ogun","Oyo","Osun","Ondo","Ekiti"] },
@@ -65,28 +65,28 @@ function Home() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero — Editorial Luxe Canvas with faded house backdrop */}
+      {/* Hero — Editorial Luxe Canvas with photographic backdrop */}
       <section className="relative overflow-hidden bg-background">
-        {/* Backdrop house illustration */}
+        {/* Photographic backdrop, softly faded into the cream */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-0 bg-center bg-no-repeat opacity-[0.07] [background-size:90%_auto] md:opacity-[0.09] md:[background-size:70%_auto]"
-          style={{ backgroundImage: `url(${heroHouse})` }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center opacity-[0.22] md:opacity-[0.28]"
+          style={{ backgroundImage: `url(${heroHome})` }}
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-40 bg-gradient-to-b from-transparent to-background"
+          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-background/70 via-background/55 to-background"
         />
 
         <div className="container-page relative pt-16 pb-12 md:pt-24 md:pb-16">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-primary md:text-7xl lg:text-[5.5rem]">
-              Find home.
+              The keys are real.
               <br />
-              <span className="text-gold">Without the run-around.</span>
+              <span className="text-gold">So is the landlord.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/70 md:text-lg">
-              Rentals from verified hosts, with prices, fees and floor plans laid bare before you ever pick up the phone.
+            <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/75 md:text-lg">
+              Every home on Landech has been walked, photographed and priced in the open. Message the host, lock the date, move in. No phantom flats, no padded fees, no chasing.
             </p>
           </div>
 
