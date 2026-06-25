@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { ListingCard } from "@/components/site/ListingCard";
 import { LISTINGS, PROPERTY_TYPES, formatNaira } from "@/lib/listings";
 import { NIGERIA, STATES } from "@/lib/nigeria";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import heroHome from "@/assets/hero-home.jpg";
 
 const REGIONS: { name: string; states: string[] }[] = [
@@ -20,9 +21,9 @@ const REGIONS: { name: string; states: string[] }[] = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Landech — rent a home you can actually trust" },
+      { title: "Landech, rent a home you can actually trust" },
       { name: "description", content: "Verified landlords. Honest fees shown up front. Every enquiry handled by a real human so nobody ghosts you mid-search." },
-      { property: "og:title", content: "Landech — rent a home you can actually trust" },
+      { property: "og:title", content: "Landech, rent a home you can actually trust" },
       { property: "og:description", content: "Verified hosts, capped fees, and a middleman on every deal. Rentals across every state in Nigeria." },
     ],
   }),
@@ -30,6 +31,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  useScrollReveal();
   const navigate = useNavigate();
   const [state, setState] = useState("");
   const [lga, setLga] = useState("");
