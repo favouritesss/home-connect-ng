@@ -1,0 +1,33 @@
+import { useEffect } from "react";
+
+/**
+ * Scroll reveal: any element with the `.reveal` class fades + slides up
+ * the first time it intersects the viewport. Mount once at the app root.
+ */
+export function useScrollReveal() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const els = document.querySelectorAll<HTMLElement>(".reveal:not(.is-visible)");
+    if (!els.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      els.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+    );
+
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  });
+}

@@ -80,9 +80,9 @@
   --accent: oklch(0.94 0.04 264);
   --accent-foreground: oklch(0.32 0.17 264);
 
-  /* accent — bright sky blue (formerly gold token, kept name for compat) */
-  --gold: oklch(0.62 0.18 255);
-  --gold-foreground: oklch(0.99 0.005 255);
+  /* accent, brand navy (slightly brighter than primary for emphasis) */
+  --gold: oklch(0.40 0.18 264);
+  --gold-foreground: oklch(0.99 0.005 90);
 
   --success: oklch(0.62 0.15 155);
   --success-foreground: oklch(0.99 0 0);
@@ -111,7 +111,7 @@
   --muted-foreground: oklch(0.72 0.02 260);
   --accent: oklch(0.32 0.08 264);
   --accent-foreground: oklch(0.96 0.01 90);
-  --gold: oklch(0.72 0.16 255);
+  --gold: oklch(0.78 0.14 264);
   --gold-foreground: oklch(0.15 0.04 264);
   --success: oklch(0.65 0.16 150);
   --success-foreground: oklch(0.99 0 0);
@@ -148,4 +148,15 @@
   @media (min-width: 768px) {
     padding-inline: 2rem;
   }
+}
+
+/* Scroll-reveal animation, fade + slide up. Triggered by .is-visible class added via IntersectionObserver. */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 0; transform: translateY(28px); will-change: opacity, transform; }
+.reveal.is-visible { animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.is-visible { opacity: 1; transform: none; animation: none; }
 }
