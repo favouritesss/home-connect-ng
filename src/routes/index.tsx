@@ -169,16 +169,16 @@ function Home() {
         <div className="grid gap-8 md:grid-cols-3">
           <TrustItem icon={<ShieldCheck className="h-5 w-5" />} title="Every host, ID-checked" body="Landlords and agents clear identity and document checks before a single photo goes live." />
           <TrustItem icon={<MessageSquare className="h-5 w-5" />} title="A human in the middle" body="Your first message comes to us. We hand it to the host and bring the reply back, on the record." />
-          <TrustItem icon={<Wallet className="h-5 w-5" />} title="No surprise fees" body="Rent, caution, agency and legal — every number is on the listing before you tap enquire." />
+          <TrustItem icon={<Wallet className="h-5 w-5" />} title="No surprise fees" body="Rent, caution, agency and legal, every number is on the listing before you tap enquire." />
         </div>
       </section>
 
-      {/* New to Market — editorial cards */}
+      {/* New to Market, editorial cards */}
       <section className="container-page py-12">
         <div className="flex items-end justify-between gap-4 border-b-2 border-primary/5 pb-8">
           <div>
             <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">Fresh off the market</h2>
-            <p className="mt-2 text-base font-medium text-primary/60">Homes listed this week — checked, photographed and ready to tour.</p>
+            <p className="mt-2 text-base font-medium text-primary/60">Homes listed this week, checked, photographed and ready to tour.</p>
           </div>
           <Link to="/listings" className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
             See all <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -194,7 +194,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Market presence — navy stats panel */}
+      {/* Market presence, navy stats panel */}
       <section className="container-page py-12">
         <div className="flex flex-col items-center justify-between gap-12 rounded-[2rem] bg-primary p-10 text-primary-foreground md:flex-row md:p-16">
           <div className="max-w-md text-center md:text-left">
@@ -202,7 +202,7 @@ function Home() {
               A neighbour, <span className="text-gold">in every city.</span>
             </h2>
             <p className="mt-4 text-base font-medium text-primary-foreground/70">
-              Real people on the ground in the places that move fastest — so you hear back the same day, not next week.
+              Real people on the ground in the places that move fastest, so you hear back the same day, not next week.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-x-12 gap-y-8 md:gap-x-16">
@@ -270,9 +270,9 @@ function Home() {
           </div>
           <ol className="space-y-4">
             {[
-              { t: "Search homes that exist", d: "Photos, prices and floor plans are checked before a listing goes live — no bait, no recycled ads." },
+              { t: "Search homes that exist", d: "Photos, prices and floor plans are checked before a listing goes live, no bait, no recycled ads." },
               { t: "Send the first message", d: "It lands with us. We pass it to the host with your context already attached." },
-              { t: "Reply in one thread", d: "Everything stays inside Landech — no WhatsApp scavenger hunt, no disappearing numbers." },
+              { t: "Reply in one thread", d: "Everything stays inside Landech, no WhatsApp scavenger hunt, no disappearing numbers." },
               { t: "Sign and settle", d: "Shortlets pay through Paystack with a refund if a host cancels. Yearly rent is logged the moment it changes hands." },
             ].map((s, i) => (
               <li key={s.t} className="flex gap-4 rounded-2xl border border-border bg-card p-5">
@@ -385,7 +385,7 @@ function Home() {
           <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
           <div className="grid items-center gap-8 md:grid-cols-[1.4fr_1fr]">
             <div>
-              <h2 className="font-display text-3xl text-primary md:text-4xl">A home you can settle into — found honestly.</h2>
+              <h2 className="font-display text-3xl text-primary md:text-4xl">A home you can settle into, found honestly.</h2>
               <p className="mt-3 max-w-lg text-foreground/70">
                 Browse verified rentals, message hosts without games, and lock in a place you've actually seen. No padded fees, no ghost agents.
               </p>
