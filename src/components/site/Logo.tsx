@@ -1,5 +1,5 @@
 /**
- * Landech logo — a unique egg-shaped mark.
+ * Landech logo, a unique egg-shaped mark.
  * The egg silhouette (slightly tapered at the top) holds an inset
  * doorway + roof carved from negative space, hinting at "home inside
  * a fresh start". Pure SVG, scales with `size` prop.

@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { ListingCard } from "@/components/site/ListingCard";
 import { LISTINGS, PROPERTY_TYPES, formatNaira } from "@/lib/listings";
 import { NIGERIA, STATES } from "@/lib/nigeria";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import heroHome from "@/assets/hero-home.jpg";
 
 const REGIONS: { name: string; states: string[] }[] = [
@@ -20,9 +21,9 @@ const REGIONS: { name: string; states: string[] }[] = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Landech — rent a home you can actually trust" },
+      { title: "Landech, rent a home you can actually trust" },
       { name: "description", content: "Verified landlords. Honest fees shown up front. Every enquiry handled by a real human so nobody ghosts you mid-search." },
-      { property: "og:title", content: "Landech — rent a home you can actually trust" },
+      { property: "og:title", content: "Landech, rent a home you can actually trust" },
       { property: "og:description", content: "Verified hosts, capped fees, and a middleman on every deal. Rentals across every state in Nigeria." },
     ],
   }),
@@ -30,6 +31,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  useScrollReveal();
   const navigate = useNavigate();
   const [state, setState] = useState("");
   const [lga, setLga] = useState("");
@@ -65,32 +67,36 @@ function Home() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero — Editorial Luxe Canvas with photographic backdrop */}
-      <section className="relative overflow-hidden bg-background">
+      {/* Hero, Editorial Luxe Canvas with photographic backdrop */}
+      <section className="relative overflow-hidden">
         {/* Photographic backdrop, softly faded into the cream */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center opacity-[0.22] md:opacity-[0.28]"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroHome})` }}
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-background/70 via-background/55 to-background"
+          className="pointer-events-none absolute inset-0 bg-background/70 backdrop-blur-[2px]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background"
         />
 
         <div className="container-page relative pt-16 pb-12 md:pt-24 md:pb-16">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="reveal mx-auto max-w-4xl text-center">
             <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-primary md:text-7xl lg:text-[5.5rem]">
-              The keys are real.
+              Find home.
               <br />
-              <span className="text-gold">So is the landlord.</span>
+              <span className="text-gold">Without the run-around.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/75 md:text-lg">
-              Every home on Landech has been walked, photographed and priced in the open. Message the host, lock the date, move in. No phantom flats, no padded fees, no chasing.
+            <p className="mx-auto mt-6 max-w-xl text-base font-medium text-primary/70 md:text-lg">
+              Rentals from verified hosts, with prices, fees and floor plans laid bare before you ever pick up the phone.
             </p>
           </div>
 
-          {/* Search card — three section bar matching chosen layout */}
+          {/* Search card, three section bar matching chosen layout */}
           <form
             onSubmit={handleSearch}
             className="mx-auto mt-10 flex max-w-3xl items-stretch gap-1 rounded-2xl border border-primary/5 bg-card p-2 shadow-[0_32px_64px_-16px_rgb(0_48_135_/_0.15)]"
@@ -159,20 +165,20 @@ function Home() {
       </section>
 
       {/* Trust strip */}
-      <section className="container-page pt-4 pb-12">
+      <section className="reveal container-page pt-4 pb-12">
         <div className="grid gap-8 md:grid-cols-3">
           <TrustItem icon={<ShieldCheck className="h-5 w-5" />} title="Every host, ID-checked" body="Landlords and agents clear identity and document checks before a single photo goes live." />
           <TrustItem icon={<MessageSquare className="h-5 w-5" />} title="A human in the middle" body="Your first message comes to us. We hand it to the host and bring the reply back, on the record." />
-          <TrustItem icon={<Wallet className="h-5 w-5" />} title="No surprise fees" body="Rent, caution, agency and legal — every number is on the listing before you tap enquire." />
+          <TrustItem icon={<Wallet className="h-5 w-5" />} title="No surprise fees" body="Rent, caution, agency and legal, every number is on the listing before you tap enquire." />
         </div>
       </section>
 
-      {/* New to Market — editorial cards */}
-      <section className="container-page py-12">
+      {/* New to Market, editorial cards */}
+      <section className="reveal container-page py-12">
         <div className="flex items-end justify-between gap-4 border-b-2 border-primary/5 pb-8">
           <div>
             <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">Fresh off the market</h2>
-            <p className="mt-2 text-base font-medium text-primary/60">Homes listed this week — checked, photographed and ready to tour.</p>
+            <p className="mt-2 text-base font-medium text-primary/60">Homes listed this week, checked, photographed and ready to tour.</p>
           </div>
           <Link to="/listings" className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
             See all <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -188,15 +194,15 @@ function Home() {
         </div>
       </section>
 
-      {/* Market presence — navy stats panel */}
-      <section className="container-page py-12">
+      {/* Market presence, navy stats panel */}
+      <section className="reveal container-page py-12">
         <div className="flex flex-col items-center justify-between gap-12 rounded-[2rem] bg-primary p-10 text-primary-foreground md:flex-row md:p-16">
           <div className="max-w-md text-center md:text-left">
             <h2 className="font-display text-3xl font-bold md:text-4xl">
               A neighbour, <span className="text-gold">in every city.</span>
             </h2>
             <p className="mt-4 text-base font-medium text-primary-foreground/70">
-              Real people on the ground in the places that move fastest — so you hear back the same day, not next week.
+              Real people on the ground in the places that move fastest, so you hear back the same day, not next week.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-x-12 gap-y-8 md:gap-x-16">
@@ -210,7 +216,7 @@ function Home() {
 
 
       {/* Region quick browse, compact replacement for the old grid */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="rounded-3xl border border-border/70 bg-gradient-to-br from-primary-soft/60 via-surface to-background p-8 md:p-12">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
@@ -248,7 +254,7 @@ function Home() {
       </section>
 
       {/* How it works mini */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
@@ -264,9 +270,9 @@ function Home() {
           </div>
           <ol className="space-y-4">
             {[
-              { t: "Search homes that exist", d: "Photos, prices and floor plans are checked before a listing goes live — no bait, no recycled ads." },
+              { t: "Search homes that exist", d: "Photos, prices and floor plans are checked before a listing goes live, no bait, no recycled ads." },
               { t: "Send the first message", d: "It lands with us. We pass it to the host with your context already attached." },
-              { t: "Reply in one thread", d: "Everything stays inside Landech — no WhatsApp scavenger hunt, no disappearing numbers." },
+              { t: "Reply in one thread", d: "Everything stays inside Landech, no WhatsApp scavenger hunt, no disappearing numbers." },
               { t: "Sign and settle", d: "Shortlets pay through Paystack with a refund if a host cancels. Yearly rent is logged the moment it changes hands." },
             ].map((s, i) => (
               <li key={s.t} className="flex gap-4 rounded-2xl border border-border bg-card p-5">
@@ -282,7 +288,7 @@ function Home() {
       </section>
 
       {/* Why Landech */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
@@ -315,7 +321,7 @@ function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-3xl text-foreground md:text-4xl">In their own words.</h2>
@@ -346,7 +352,7 @@ function Home() {
       </section>
 
       {/* For hosts split CTA */}
-      <section className="container-page py-16">
+      <section className="reveal container-page py-16">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[oklch(0.97_0.02_85)] p-8 md:p-10">
             <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
@@ -374,12 +380,12 @@ function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="container-page pb-20">
+      <section className="reveal container-page pb-20">
         <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[oklch(0.97_0.02_85)] px-8 py-12 md:px-14 md:py-16">
           <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
           <div className="grid items-center gap-8 md:grid-cols-[1.4fr_1fr]">
             <div>
-              <h2 className="font-display text-3xl text-primary md:text-4xl">A home you can settle into — found honestly.</h2>
+              <h2 className="font-display text-3xl text-primary md:text-4xl">A home you can settle into, found honestly.</h2>
               <p className="mt-3 max-w-lg text-foreground/70">
                 Browse verified rentals, message hosts without games, and lock in a place you've actually seen. No padded fees, no ghost agents.
               </p>
