@@ -96,40 +96,45 @@ function Home() {
             </p>
           </div>
 
-          {/* Search card, three section bar matching chosen layout */}
+          {/* Search card, responsive layout that stacks on mobile and extends on larger screens */}
           <form
             onSubmit={handleSearch}
-            className="mx-auto mt-10 flex max-w-3xl items-stretch gap-1 rounded-2xl border border-primary/5 bg-card p-2 shadow-[0_32px_64px_-16px_rgb(0_48_135_/_0.15)]"
+            className="mx-auto mt-10 flex flex-col md:flex-row max-w-3xl items-stretch gap-2 md:gap-1 rounded-2xl border border-primary/5 bg-card p-3 md:p-2 shadow-[0_32px_64px_-16px_rgb(0_48_135_/_0.15)]"
           >
-            <div className="flex flex-1 min-w-0 items-center gap-2 px-3">
-              <Search className="h-4 w-4 shrink-0 text-primary/40" />
-              <select
-                value={state}
-                onChange={(e) => { setState(e.target.value); setLga(""); }}
-                className="hero-select flex-1 min-w-0"
-                aria-label="State"
-              >
-                <option value="">Any state</option>
-                {STATES.map((s) => <option key={s} value={s}>{s}</option>)}
-              </select>
+            <div className="flex flex-1 flex-col sm:flex-row min-w-0 items-stretch sm:items-center gap-3 sm:gap-2 px-3 py-1 sm:py-0">
+              <div className="flex items-center gap-2 flex-1 min-w-0">
+                <Search className="h-4 w-4 shrink-0 text-primary/40" />
+                <select
+                  value={state}
+                  onChange={(e) => { setState(e.target.value); setLga(""); }}
+                  className="hero-select flex-1 min-w-0"
+                  aria-label="State"
+                >
+                  <option value="">Any state</option>
+                  {STATES.map((s) => <option key={s} value={s}>{s}</option>)}
+                </select>
+              </div>
               <span className="hidden h-6 w-px bg-primary/10 sm:block" />
-              <select
-                value={lga}
-                onChange={(e) => setLga(e.target.value)}
-                disabled={!state}
-                className="hero-select hidden flex-1 min-w-0 disabled:cursor-not-allowed disabled:opacity-40 sm:block"
-                aria-label="LGA"
-              >
-                <option value="">{state ? "Any LGA" : "Pick state"}</option>
-                {lgaOptions.map((l) => <option key={l} value={l}>{l}</option>)}
-              </select>
+              <div className="flex items-center gap-2 flex-1 min-w-0 border-t sm:border-t-0 border-primary/10 pt-2.5 sm:pt-0">
+                <MapPin className="h-4 w-4 shrink-0 text-primary/40 sm:hidden" />
+                <select
+                  value={lga}
+                  onChange={(e) => setLga(e.target.value)}
+                  disabled={!state}
+                  className="hero-select flex-1 min-w-0 disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label="LGA"
+                >
+                  <option value="">{state ? "Any LGA" : "Pick state"}</option>
+                  {lgaOptions.map((l) => <option key={l} value={l}>{l}</option>)}
+                </select>
+              </div>
             </div>
-            <div className="hidden items-center gap-2 border-l border-primary/10 px-4 md:flex">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-primary/40">Type</span>
+            <div className="flex items-center gap-2 border-t md:border-t-0 md:border-l border-primary/10 px-4 py-2.5 md:py-0">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-primary/40 shrink-0">Type</span>
               <select
                 value={type}
                 onChange={(e) => setType(e.target.value as "long-term" | "shortlet" | "")}
-                className="hero-select font-semibold text-primary"
+                className="hero-select flex-1 md:flex-initial font-semibold text-primary"
                 aria-label="Rental type"
               >
                 <option value="">For Rent</option>
@@ -138,8 +143,8 @@ function Home() {
               </select>
             </div>
             <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-4 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95 sm:px-8">
-              <Search className="h-4 w-4 sm:hidden" />
-              <span className="hidden sm:inline">Search</span>
+              <Search className="h-4 w-4" />
+              <span>Search</span>
             </button>
           </form>
 
@@ -316,6 +321,54 @@ function Home() {
                 <p className="mt-1 text-sm text-muted-foreground">{b.d}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Home Services Marketplace Section */}
+      <section className="reveal container-page py-16">
+        <div className="rounded-3xl border border-gold/30 bg-[oklch(0.97_0.02_85)] p-8 md:p-12 shadow-soft">
+          <div className="grid gap-10 lg:grid-cols-2 items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-gold/10 px-3 py-1 text-xs font-semibold text-gold">
+                <ShieldCheck className="h-3 w-3" /> Brand New Feature
+              </span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-primary md:text-4xl">
+                Get your home ready, <span className="text-gold">with trusted pros.</span>
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-foreground/80">
+                Moving into a new place? Need repairs, installations, painting, or deep cleaning? 
+                Instead of searching elsewhere, hire verified local professionals directly on Landech. 
+                Skilled gig workers get fast jobs, and you get a hassle-free move-in.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  to="/services"
+                  className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:bg-primary/90 transition-all"
+                >
+                  Find Home Services
+                </Link>
+                <Link
+                  to="/services"
+                  className="rounded-xl border border-primary/20 bg-card px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-soft transition-all"
+                >
+                  Offer Your Services
+                </Link>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { t: "Verified plumbers", d: "Resolve water leaks, install heaters, and check piping before moving in." },
+                { t: "Deep cleaning", d: "Sparkling clean post-construction or standard pre-move-in deep cleans." },
+                { t: "Painting & Wallpaper", d: "Professional screeding, touchups, and full interior wall coatings." },
+                { t: "Electricians & Inverters", d: "Setup smart homes, mount TVs, and configure solar backup systems." }
+              ].map((serv, index) => (
+                <div key={index} className="rounded-2xl border border-border/60 bg-card p-5 hover:border-gold/40 transition-colors">
+                  <div className="font-display text-lg font-bold text-primary">{serv.t}</div>
+                  <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{serv.d}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

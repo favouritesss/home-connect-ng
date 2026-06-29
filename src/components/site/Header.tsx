@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 const NAV = [
   { to: "/listings", label: "Browse rentals", search: undefined },
   { to: "/listings", label: "Shortlets", search: { type: "shortlet" as const } },
+  { to: "/services", label: "Home Services" },
   { to: "/how-it-works", label: "How it works" },
   { to: "/for-landlords", label: "For landlords" },
   { to: "/for-agents", label: "For agents" },
